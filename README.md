@@ -1,25 +1,49 @@
-# CODING AGENTS: READ THIS FIRST
+# Becc's Studio — Portfolio de Binta Kande
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Portfolio personnel de Binta Kande — Chief of Staff · MSc IA & Data · Freelance Marketing Digital.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Modifier le site
 
-## What you should do — IMPORTANT
+Tout le contenu est dans **`index.html`** — un seul fichier, pas de build nécessaire.
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+### Ce que tu peux modifier facilement
 
-**Read `project/Portfolio.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+| Ce que tu veux changer | Où dans le fichier |
+|---|---|
+| Nom, titre, description | `const CONTENT = { fr: { heroName, heroSubtitle, heroDescription... }` |
+| Email de contact | `contactEmail: "binta@beccsstudio.com"` |
+| Textes FR / EN | Objet `CONTENT` — section `fr:` et `en:` |
+| Missions Chief of Staff | `cosMissions: [...]` |
+| Services freelance | `services: [...]` |
+| Cas clients (stats) | `cases: [...]` |
+| Chiffres clés | `stats: [...]` |
+| Outils / compétences | `skillCategories: [...]` |
+| Articles du journal | `blog: [...]` |
+| Couleur principale | Cherche `--accent:` dans le `<style>` |
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+### Remplacer les photos
 
-## About the design files
+Les zones rayées "portrait · drop in" sont des placeholders. Pour les remplacer :
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+1. Ajoute ta photo dans le repo (ex: `photo.jpg`)
+2. Dans `index.html`, cherche `hero__visual-photo` ou `portrait-slot`
+3. Remplace le background `repeating-linear-gradient(...)` par `background: url('photo.jpg') center/cover`
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+### Brancher le formulaire de contact
 
-## Bundle contents
+Le formulaire simule l'envoi pour l'instant. Pour le rendre fonctionnel :
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Becc's Studio` project files (HTML prototypes, assets, components)
+1. Crée un compte sur [Formspree](https://formspree.io)
+2. Dans `index.html`, cherche `const submit = (e) =>`
+3. Ajoute un `fetch('https://formspree.io/f/TON_ID', {...})` avant le `setSent(true)`
+
+## Déployer (GitHub Pages)
+
+Le site se met à jour automatiquement à chaque `git push` si GitHub Pages est activé sur la branche `main`.
+
+## Stack
+
+- React 18 (CDN, pas de build)
+- Babel Standalone (transpile JSX dans le navigateur)
+- CSS custom properties (tokens de design)
+- Google Fonts : Fraunces, Inter, JetBrains Mono

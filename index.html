@@ -1,0 +1,1480 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Binta Kande — Becc's Studio</title>
+  <meta name="description" content="Chief of Staff · MSc IA & Data · Freelance Marketing Digital — Portfolio de Binta Kande" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+/* ===== TOKENS ===== */
+:root {
+  --bg: oklch(0.965 0.012 70);
+  --bg-2: oklch(0.94 0.018 65);
+  --fg: oklch(0.22 0.025 35);
+  --fg-2: oklch(0.42 0.02 40);
+  --fg-3: oklch(0.62 0.018 45);
+  --line: oklch(0.86 0.018 60);
+  --line-strong: oklch(0.78 0.022 55);
+  --card: oklch(0.98 0.008 75);
+  --accent: oklch(0.58 0.13 40);
+  --accent-ink: oklch(0.97 0.01 70);
+  --accent-soft: oklch(0.85 0.06 50);
+  --serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Söhne Mono', ui-monospace, monospace;
+  --container: 1280px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --section-y: clamp(80px, 12vw, 160px);
+}
+[data-theme="dark"] {
+  --bg: oklch(0.16 0.018 35);
+  --bg-2: oklch(0.20 0.022 35);
+  --fg: oklch(0.94 0.012 70);
+  --fg-2: oklch(0.78 0.018 65);
+  --fg-3: oklch(0.58 0.018 55);
+  --line: oklch(0.28 0.022 40);
+  --line-strong: oklch(0.36 0.025 45);
+  --card: oklch(0.20 0.022 35);
+  --accent: oklch(0.72 0.13 45);
+  --accent-ink: oklch(0.16 0.018 35);
+  --accent-soft: oklch(0.42 0.10 50);
+}
+html, body, .nav, .hero, .cos__card, .work__row, .stats__cell, .skills__chip,
+.contact__field input, .contact__field select, .contact__field textarea {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+}
+@media (max-width: 900px) { html, body { cursor: auto; } }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: none; }
+input, select, textarea { font: inherit; color: inherit; }
+ul { list-style: none; }
+
+/* ===== UTILS ===== */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+.serif-italic { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+.mono { font-family: var(--mono); font-size: 0.78em; letter-spacing: 0.04em; text-transform: uppercase; }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 24px; }
+.eyebrow--center { text-align: center; margin-bottom: 48px; }
+.dot-pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-right: 8px; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: 0.5; } }
+.section-head { margin-bottom: clamp(48px, 8vw, 96px); max-width: 880px; }
+.section-title { font-family: var(--sans); font-size: clamp(36px, 5.4vw, 76px); line-height: 1.02; letter-spacing: -0.03em; font-weight: 500; margin-bottom: 24px; }
+.section-intro { font-family: var(--serif); font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5; color: var(--fg-2); max-width: 640px; }
+.prose { font-size: 17px; line-height: 1.7; color: var(--fg-2); margin-bottom: 20px; max-width: 60ch; }
+
+/* ===== CURSOR ===== */
+.cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; border-radius: 50%; mix-blend-mode: difference; }
+.cursor-dot { width: 6px; height: 6px; background: oklch(0.97 0.01 70); transform: translate(-50%, -50%); }
+.cursor-ring { width: 36px; height: 36px; border: 1px solid oklch(0.97 0.01 70); transform: translate(-50%, -50%); transition: width 0.3s ease, height 0.3s ease, background 0.3s ease; }
+.cursor-ring.is-hover { width: 64px; height: 64px; background: oklch(0.97 0.01 70 / 0.15); }
+
+/* ===== NAV ===== */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px var(--gutter); display: flex; align-items: center; justify-content: space-between; background: color-mix(in oklab, var(--bg) 78%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid color-mix(in oklab, var(--line) 40%, transparent); }
+.nav__brand { font-family: var(--serif); font-style: italic; font-size: 22px; letter-spacing: -0.02em; }
+.nav__brand-mark { color: var(--accent); margin-right: 6px; }
+.nav__links { display: flex; gap: 28px; font-size: 13px; }
+.nav__link { color: var(--fg-2); position: relative; padding: 6px 0; }
+.nav__link::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--accent); transition: right 0.3s ease; }
+.nav__link:hover::after, .nav__link.is-active::after { right: 0; }
+.nav__link.is-active { color: var(--fg); }
+.nav__right { display: flex; gap: 16px; align-items: center; }
+.nav__toggle { display: flex; border: 1px solid var(--line-strong); border-radius: 999px; overflow: hidden; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.nav__toggle button { padding: 8px 12px; color: var(--fg-3); }
+.nav__toggle button.is-active { background: var(--fg); color: var(--bg); }
+.nav__theme { width: 36px; height: 36px; border: 1px solid var(--line-strong); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+@media (max-width: 760px) { .nav__links { display: none; } }
+
+/* ===== BUTTONS ===== */
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 28px; border-radius: 999px; font-size: 14px; font-weight: 500; letter-spacing: 0.01em; white-space: nowrap; }
+.btn span { transition: transform 0.3s ease; display: inline-block; }
+.btn:hover span { transform: translateX(4px); }
+.btn--primary { background: var(--fg); color: var(--bg); }
+.btn--ghost { border: 1px solid var(--line-strong); color: var(--fg); }
+.btn--ghost:hover { border-color: var(--fg); }
+
+/* ===== HERO ===== */
+.hero { min-height: 100vh; position: relative; display: flex; align-items: center; padding: 120px var(--gutter) 80px; overflow: hidden; }
+.hero__orb { position: absolute; top: -10%; right: -10%; width: 70vw; height: 70vw; max-width: 900px; max-height: 900px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, var(--accent), transparent 65%); opacity: 0.22; filter: blur(40px); transition: transform 1.2s cubic-bezier(.2,.8,.2,1); pointer-events: none; }
+.hero__split-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: center; width: 100%; max-width: var(--container); margin: 0 auto; position: relative; z-index: 2; }
+.hero__split-name { font-family: var(--sans); font-size: clamp(64px, 10vw, 152px); line-height: 0.92; letter-spacing: -0.04em; font-weight: 500; margin: 16px 0 32px; }
+.hero__subtitle { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 20px; line-height: 1.6; }
+.hero__description { font-family: var(--serif); font-size: clamp(18px, 1.7vw, 22px); line-height: 1.5; color: var(--fg-2); max-width: 520px; margin-bottom: 28px; }
+.hero__mantra { font-size: clamp(20px, 2vw, 28px); color: var(--accent); margin-bottom: 32px; }
+.hero__cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero__visual { display: flex; align-items: center; justify-content: center; position: relative; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+.hero__visual-disc { position: relative; width: clamp(260px, 32vw, 440px); height: clamp(260px, 32vw, 440px); border-radius: 50%; background: radial-gradient(circle at 35% 35%, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; box-shadow: 0 30px 80px -20px color-mix(in oklab, var(--accent) 40%, transparent); }
+.hero__visual-mono { font-family: var(--serif); font-style: italic; font-size: clamp(80px, 10vw, 140px); color: var(--accent-ink); letter-spacing: -0.04em; transition: opacity 0.4s ease; }
+.hero__visual-photo { position: absolute; inset: 12%; border-radius: 50%; background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--accent) 70%, var(--bg)), color-mix(in oklab, var(--accent) 70%, var(--bg)) 10px, color-mix(in oklab, var(--accent) 50%, var(--bg)) 10px, color-mix(in oklab, var(--accent) 50%, var(--bg)) 20px); display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(0.92); transition: opacity 0.4s ease, transform 0.5s cubic-bezier(.2,.8,.2,1); pointer-events: none; }
+.hero__visual-disc:hover .hero__visual-photo { opacity: 1; transform: scale(1); }
+.hero__visual-disc:hover .hero__visual-mono { opacity: 0; }
+.hero__visual-ring { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); animation: rotate 24s linear infinite; }
+.hero__visual-text { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; fill: var(--fg-2); }
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.hero--giant .hero__giant-wrap { position: relative; z-index: 2; width: 100%; max-width: var(--container); margin: 0 auto; }
+.hero__giant-name { font-family: var(--sans); font-size: clamp(80px, 18vw, 280px); line-height: 0.85; letter-spacing: -0.05em; font-weight: 500; margin: 24px 0 40px; display: flex; flex-direction: column; }
+.hero__giant-name .serif-italic { color: var(--accent); }
+.hero__giant-meta { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
+.hero--asym .hero__asym-grid { width: 100%; max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 32px 60px; align-items: end; position: relative; z-index: 2; }
+.hero__asym-left { grid-column: 1; grid-row: 1; }
+.hero__asym-right { grid-column: 2; grid-row: 1 / 3; align-self: end; padding-bottom: 20px; }
+.hero__asym-portrait { grid-column: 1; grid-row: 2; }
+.hero__asym-name { font-family: var(--sans); font-size: clamp(72px, 12vw, 200px); line-height: 0.9; letter-spacing: -0.04em; font-weight: 500; }
+.hero__asym-name .serif-italic { color: var(--accent); }
+.portrait-slot { width: 100%; aspect-ratio: 4/5; max-height: 420px; background: repeating-linear-gradient(45deg, var(--bg-2), var(--bg-2) 12px, color-mix(in oklab, var(--accent-soft) 30%, var(--bg-2)) 12px, color-mix(in oklab, var(--accent-soft) 30%, var(--bg-2)) 24px); border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line); }
+.portrait-mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-3); background: var(--bg); padding: 6px 14px; border-radius: 999px; }
+.hero__scroll-hint { position: absolute; bottom: 32px; left: var(--gutter); font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-3); }
+@media (max-width: 880px) {
+  .hero__split-grid { grid-template-columns: 1fr; }
+  .hero__split-right { display: none; }
+  .hero--asym .hero__asym-grid { grid-template-columns: 1fr; }
+  .hero__asym-right { grid-column: 1; grid-row: auto; }
+  .hero__asym-portrait { grid-column: 1; grid-row: auto; }
+}
+
+/* ===== MARQUEE ===== */
+.marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 24px 0; background: var(--bg-2); }
+.marquee__track { display: flex; gap: 40px; white-space: nowrap; animation: marquee 40s linear infinite; width: max-content; }
+.marquee__item { font-family: var(--serif); font-style: italic; font-size: clamp(32px, 5vw, 60px); color: var(--fg); letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 40px; }
+.marquee__sep { color: var(--accent); font-size: 0.7em; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
+
+/* ===== MANIFESTO ===== */
+.manifesto { padding: var(--section-y) 0; background: color-mix(in oklab, var(--accent-soft) 35%, var(--bg)); position: relative; overflow: hidden; }
+.manifesto__bg-word { position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); font-family: var(--serif); font-style: italic; font-size: clamp(80px, 12vw, 180px); line-height: 0.85; letter-spacing: -0.04em; color: color-mix(in oklab, var(--accent) 22%, transparent); white-space: nowrap; pointer-events: none; user-select: none; font-weight: 400; transition: transform 0.1s linear; z-index: 0; }
+.manifesto__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 80px 1fr; gap: 40px; align-items: start; }
+.manifesto__side { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+.manifesto__quote-mark { font-size: 120px; line-height: 0.7; color: var(--accent); display: block; }
+.manifesto__label { writing-mode: vertical-rl; transform: rotate(180deg); color: var(--fg-3); font-size: 11px; letter-spacing: 0.24em; margin-top: 12px; }
+.manifesto__text { font-size: clamp(32px, 5vw, 72px); line-height: 1.15; letter-spacing: -0.025em; color: var(--fg); font-weight: 400; font-family: var(--serif); max-width: 22ch; }
+.manifesto__big { display: inline; }
+.manifesto__kw { color: var(--accent); font-style: italic; position: relative; display: inline-block; }
+.manifesto__kw::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0.08em; height: 0.18em; background: color-mix(in oklab, var(--accent) 30%, transparent); z-index: -1; border-radius: 2px; }
+.manifesto__sign { margin-top: 56px; display: flex; align-items: center; gap: 24px; font-size: 18px; color: var(--fg-2); flex-wrap: wrap; }
+.manifesto__rule { flex: 1; height: 1px; background: var(--line-strong); min-width: 40px; max-width: 200px; }
+@media (max-width: 760px) {
+  .manifesto__inner { grid-template-columns: 1fr; gap: 24px; }
+  .manifesto__side { position: static; flex-direction: row; align-items: center; }
+  .manifesto__label { writing-mode: horizontal-tb; transform: none; margin-top: 0; }
+  .manifesto__quote-mark { font-size: 80px; }
+}
+
+/* ===== ABOUT ===== */
+.about { padding: var(--section-y) 0; overflow: hidden; }
+.about__collage { position: relative; height: clamp(320px, 38vw, 520px); margin: 60px 0 80px; }
+.about__photo { position: absolute; background: var(--card); border: 1px solid var(--line); padding: 12px 12px 36px; box-shadow: 0 20px 50px -20px color-mix(in oklab, var(--fg) 30%, transparent); transition: transform 0.5s cubic-bezier(.2,.8,.2,1), z-index 0s 0.3s; z-index: 1; }
+.about__photo:hover { transform: scale(1.04) rotate(0deg) !important; z-index: 5; transition: transform 0.5s cubic-bezier(.2,.8,.2,1), z-index 0s; }
+.about__photo-inner { width: 100%; height: calc(100% - 24px); background: repeating-linear-gradient(45deg, var(--bg-2), var(--bg-2) 10px, color-mix(in oklab, var(--accent-soft) 40%, var(--bg-2)) 10px, color-mix(in oklab, var(--accent-soft) 40%, var(--bg-2)) 20px); display: flex; align-items: center; justify-content: center; border-radius: 4px; margin-bottom: 8px; }
+.about__photo-tag { font-size: 10px; color: var(--fg-3); display: block; text-align: center; }
+.about__photo--1 { width: 22%; aspect-ratio: 4/5; top: 0; left: 4%; transform: rotate(-5deg); }
+.about__photo--2 { width: 26%; aspect-ratio: 3/4; top: 18%; left: 30%; transform: rotate(3deg); z-index: 2; }
+.about__photo--3 { width: 22%; aspect-ratio: 1/1; top: 6%; right: 22%; transform: rotate(6deg); }
+.about__photo--4 { width: 24%; aspect-ratio: 4/3; bottom: 4%; right: 4%; transform: rotate(-3deg); }
+.about__grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+.about__facts { border-top: 1px solid var(--line); display: grid; }
+.about__fact { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--line); gap: 16px; }
+.about__fact-key { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-3); }
+.about__fact-val { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--fg); text-align: right; }
+@media (max-width: 880px) { .about__grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .about__collage { height: 380px; }
+  .about__photo--1 { width: 38%; left: 0; }
+  .about__photo--2 { width: 44%; left: 28%; }
+  .about__photo--3 { width: 36%; right: 4%; }
+  .about__photo--4 { width: 42%; right: 8%; }
+}
+
+/* ===== CHIEF OF STAFF ===== */
+.cos { padding: var(--section-y) 0; background: var(--bg-2); }
+.cos__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.cos__card { background: var(--bg-2); padding: 36px 32px; display: flex; flex-direction: column; gap: 12px; transition: background 0.3s ease; }
+.cos__card:hover { background: var(--bg); }
+.cos__card-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+.cos__num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; color: var(--fg-3); }
+.cos__tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); background: color-mix(in oklab, var(--accent) 12%, transparent); padding: 4px 10px; border-radius: 999px; }
+.cos__title { font-family: var(--serif); font-size: 26px; font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; color: var(--fg); }
+.cos__body { color: var(--fg-2); font-size: 15px; line-height: 1.6; }
+@media (max-width: 880px) { .cos__grid { grid-template-columns: 1fr; } }
+
+/* ===== SERVICES ===== */
+.services { padding: var(--section-y) 0; }
+.services__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.services__card { border: 1px solid var(--line); border-radius: 16px; padding: 36px; background: var(--card); transition: transform 0.5s cubic-bezier(.2,.8,.2,1), border-color 0.3s ease, box-shadow 0.4s ease; position: relative; overflow: hidden; }
+.services__card::before { content: ""; position: absolute; inset: -2px; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), color-mix(in oklab, var(--accent) 18%, transparent), transparent 60%); opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+.services__card:hover { border-color: var(--accent); transform: translateY(-6px); box-shadow: 0 24px 50px -20px color-mix(in oklab, var(--accent) 30%, transparent); }
+.services__card:hover::before { opacity: 1; }
+.services__card:hover .services__num { color: var(--accent); }
+.services__card:hover .services__title { transform: translateX(4px); }
+.services__title { transition: transform 0.4s cubic-bezier(.2,.8,.2,1); }
+.services__card-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.services__num { color: var(--fg-3); font-size: 11px; }
+.services__title { font-family: var(--serif); font-style: italic; font-size: 28px; font-weight: 400; letter-spacing: -0.01em; }
+.services__list { display: flex; flex-direction: column; gap: 12px; }
+.services__list li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--fg-2); }
+.services__bullet { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+@media (max-width: 760px) { .services__grid { grid-template-columns: 1fr; } }
+
+/* ===== STATS ===== */
+.stats { padding: var(--section-y) 0; background: var(--fg); color: var(--bg); }
+.stats__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.stats__cell { padding: 24px 32px; border-left: 1px solid color-mix(in oklab, var(--bg) 20%, transparent); }
+.stats__cell:first-child { border-left: 0; }
+.stats__value { font-size: clamp(48px, 6vw, 88px); line-height: 1; margin-bottom: 16px; color: var(--bg); font-style: italic; }
+.stats__label { font-size: 16px; margin-bottom: 8px; }
+.stats__sub { color: color-mix(in oklab, var(--bg) 60%, transparent); }
+@media (max-width: 880px) {
+  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+  .stats__cell:nth-child(3) { border-left: 0; }
+}
+
+/* ===== WORK ===== */
+.work { padding: var(--section-y) 0; background: var(--bg-2); }
+.work__list { border-top: 1px solid var(--line-strong); }
+.work__row { border-bottom: 1px solid var(--line-strong); transition: background 0.3s ease; }
+.work__row.is-open { background: var(--bg); }
+.work__head { width: 100%; display: grid; grid-template-columns: 60px 1.6fr 1.4fr 1.2fr 32px; align-items: center; gap: 24px; padding: 32px 16px; text-align: left; }
+.work__num { color: var(--fg-3); }
+.work__client { font-family: var(--serif); font-style: italic; font-size: clamp(24px, 2.6vw, 36px); letter-spacing: -0.01em; color: var(--fg); }
+.work__role { font-size: 14px; color: var(--fg-2); }
+.work__type { color: var(--fg-3); }
+.work__icon { font-size: 22px; color: var(--accent); font-family: var(--serif); text-align: right; transition: transform 0.4s ease; }
+.work__row.is-open .work__icon { transform: rotate(180deg); }
+.work__panel { overflow: hidden; transition: max-height 0.6s cubic-bezier(.2,.8,.2,1); }
+.work__panel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 0 16px 48px; }
+.work__teaser { font-family: var(--serif); font-size: 22px; line-height: 1.4; color: var(--fg); margin-bottom: 24px; font-style: italic; }
+.work__scope { display: flex; flex-direction: column; gap: 10px; }
+.work__scope li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--fg-2); }
+.work__visual { width: 100%; aspect-ratio: 16/10; background: repeating-linear-gradient(-45deg, var(--bg-2), var(--bg-2) 10px, color-mix(in oklab, var(--accent-soft) 30%, var(--bg-2)) 10px, color-mix(in oklab, var(--accent-soft) 30%, var(--bg-2)) 20px); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; border: 1px solid var(--line); }
+.work__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.work__stat { border-top: 1px solid var(--line); padding-top: 12px; }
+.work__stat-val { font-size: 32px; line-height: 1; color: var(--accent); margin-bottom: 6px; }
+.work__stat-label { font-size: 10px; color: var(--fg-3); }
+@media (max-width: 880px) {
+  .work__head { grid-template-columns: 40px 1fr 32px; }
+  .work__role, .work__type { display: none; }
+  .work__panel-inner { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ===== SKILLS ===== */
+.skills { padding: var(--section-y) 0; position: relative; overflow: hidden; }
+.skills__bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.skills__shape { position: absolute; border-radius: 50%; filter: blur(40px); opacity: 0.35; transition: transform 1.4s cubic-bezier(.2,.8,.2,1); }
+.skills__shape--1 { width: 380px; height: 380px; top: 10%; left: -120px; background: radial-gradient(circle, var(--accent), transparent 65%); }
+.skills__shape--2 { width: 280px; height: 280px; top: 50%; right: -80px; background: radial-gradient(circle, var(--accent-soft), transparent 65%); }
+.skills__shape--3 { width: 220px; height: 220px; bottom: 8%; left: 30%; background: radial-gradient(circle, var(--accent), transparent 65%); opacity: 0.2; }
+.skills .container { position: relative; z-index: 1; }
+.skills__rows { display: flex; flex-direction: column; gap: 28px; }
+.skills__row { border-top: 1px solid var(--line); padding-top: 20px; }
+.skills__row-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+.skills__row-num { color: var(--fg-3); font-size: 11px; }
+.skills__cat-name { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.4vw, 32px); font-weight: 400; color: var(--accent); letter-spacing: -0.01em; }
+.skills__marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); }
+.skills__marquee-track { display: flex; gap: 12px; white-space: nowrap; width: max-content; animation: skillsMarquee 30s linear infinite; will-change: transform; }
+.skills__marquee.is-reverse .skills__marquee-track { animation-name: skillsMarqueeRev; }
+@keyframes skillsMarquee { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-33.333%, 0, 0); } }
+@keyframes skillsMarqueeRev { from { transform: translate3d(-33.333%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+.skills__chip { border: 1px solid var(--line-strong); padding: 10px 18px; border-radius: 999px; font-size: 11px; color: var(--fg-2); transition: all 0.4s cubic-bezier(.2,.8,.2,1); background: var(--bg); display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; cursor: none; }
+.skills__chip:hover { border-color: var(--accent); color: var(--accent); background: color-mix(in oklab, var(--accent) 10%, var(--bg)); transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 24px -8px color-mix(in oklab, var(--accent) 50%, transparent); }
+.skills__chip-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; animation: skillsDot 2.4s ease-in-out infinite; }
+.skills__chip:nth-child(2n) .skills__chip-dot { animation-delay: -0.6s; }
+.skills__chip:nth-child(3n) .skills__chip-dot { animation-delay: -1.2s; }
+.skills__chip:nth-child(5n) .skills__chip-dot { animation-delay: -1.8s; }
+@keyframes skillsDot { 0%, 100% { transform: scale(1); opacity: 1; background: var(--accent); } 50% { transform: scale(1.8); opacity: 0.6; background: var(--fg); } }
+
+/* ===== PROCESS ===== */
+.process { padding: var(--section-y) 0; background: var(--bg-2); }
+.process__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.process__step-num { font-size: clamp(64px, 7vw, 96px); line-height: 1; color: var(--accent); margin-bottom: 16px; font-style: italic; }
+.process__step-title { font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px; }
+.process__step-body { font-size: 15px; color: var(--fg-2); line-height: 1.6; }
+@media (max-width: 880px) { .process__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .process__grid { grid-template-columns: 1fr; } }
+
+/* ===== BLOG ===== */
+.blog { padding: var(--section-y) 0; }
+.blog__list { border-top: 1px solid var(--line); }
+.blog__row { display: grid; grid-template-columns: 140px 100px 1fr 32px; align-items: center; gap: 24px; padding: 28px 8px; border-bottom: 1px solid var(--line); transition: padding 0.3s ease, color 0.3s ease; }
+.blog__row:hover { padding-left: 24px; color: var(--accent); }
+.blog__date { color: var(--fg-3); }
+.blog__tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent); padding: 4px 10px; border-radius: 999px; text-align: center; width: fit-content; }
+.blog__title { font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2vw, 26px); letter-spacing: -0.01em; }
+.blog__arrow { font-size: 20px; text-align: right; transition: transform 0.3s ease; }
+.blog__row:hover .blog__arrow { transform: translateX(8px); }
+@media (max-width: 760px) {
+  .blog__row { grid-template-columns: 1fr 32px; gap: 8px; }
+  .blog__date, .blog__tag { grid-column: 1; font-size: 10px; }
+  .blog__title { grid-column: 1; }
+  .blog__arrow { grid-row: 1 / 4; grid-column: 2; }
+}
+
+/* ===== CONTACT ===== */
+.contact { padding: var(--section-y) 0; background: var(--bg-2); }
+.contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+.contact__title { font-family: var(--sans); font-size: clamp(40px, 5.6vw, 80px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 500; margin-bottom: 24px; }
+.contact__body { margin-bottom: 40px; }
+.contact__direct { border-top: 1px solid var(--line); padding-top: 20px; }
+.contact__direct p { color: var(--fg-3); margin-bottom: 8px; }
+.contact__email { font-size: clamp(22px, 2.2vw, 32px); color: var(--fg); display: inline-block; position: relative; font-style: italic; }
+.contact__email::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px; background: var(--accent); transform: scaleX(0.4); transform-origin: left; transition: transform 0.4s ease; }
+.contact__email:hover { color: var(--accent); }
+.contact__email:hover::after { transform: scaleX(1); }
+.contact__form { display: flex; flex-direction: column; gap: 20px; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 32px; }
+.contact__field { display: flex; flex-direction: column; gap: 8px; }
+.contact__field label { font-size: 10px; color: var(--fg-3); }
+.contact__field input, .contact__field select, .contact__field textarea { background: transparent; border: 0; border-bottom: 1px solid var(--line-strong); padding: 10px 0; font-size: 16px; font-family: var(--sans); color: var(--fg); outline: none; resize: none; }
+.contact__field input:focus, .contact__field select:focus, .contact__field textarea:focus { border-bottom-color: var(--accent); }
+.contact__submit { align-self: flex-start; margin-top: 12px; }
+@media (max-width: 880px) { .contact__grid { grid-template-columns: 1fr; } }
+
+/* ===== FOOTER ===== */
+.footer { padding: clamp(60px, 8vw, 120px) 0 32px; border-top: 1px solid var(--line); }
+.footer__big { font-size: clamp(80px, 16vw, 240px); line-height: 0.85; letter-spacing: -0.04em; margin-bottom: 60px; color: var(--fg); background: linear-gradient(180deg, var(--fg) 0%, var(--fg-3) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.footer__row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 24px; border-top: 1px solid var(--line); }
+.footer__col { color: var(--fg-3); display: flex; align-items: center; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel">
+// ─── React hooks ──────────────────────────────────────────────────────────────
+const { useState, useEffect, useRef } = React;
+const useState2 = useState, useEffect2 = useEffect, useRef2 = useRef;
+const useState3 = useState, useEffect3 = useEffect, useRef3 = useRef;
+const useStateApp = useState, useEffectApp = useEffect, useRefApp = useRef;
+
+// ─── Content (FR / EN) ────────────────────────────────────────────────────────
+const CONTENT = {
+  fr: {
+    nav: ["Index", "À propos", "Chief of Staff", "Services", "Travaux", "Contact"],
+    status: "Disponible — Q3 2026",
+    heroEyebrow: "Portfolio · 2026",
+    heroName: ["Binta", "Kande"],
+    heroSubtitle: "Chief of Staff · MSc IA & Data · Freelance Marketing Digital",
+    heroDescription: "À la croisée du Digital et de l'IA — je donne vie à des projets uniques où créativité et stratégie se rencontrent.",
+    heroMantra: "Créer, résoudre, avancer.",
+    heroCta: "Travaillons ensemble",
+    heroCv: "Télécharger le CV",
+    scrollHint: "Faire défiler",
+
+    aboutEyebrow: "01 — À propos",
+    aboutTitle: "À l'intersection de la stratégie et de la création.",
+    aboutBody: [
+      "Actuellement en MSc IA & Data, je travaille au plus près du CEO d'une jeune entreprise — un poste de Chief of Staff où je touche à tout : stratégie, opérations, marketing, automatisations.",
+      "En parallèle, j'accompagne en freelance des startups et créatrices sur leur communication digitale, de la stratégie éditoriale au design des publications, jusqu'à l'automatisation de leurs workflows.",
+      "Ce qui me fait vibrer : transformer une idée floue en système qui tourne. Mettre de la beauté dans l'opérationnel."
+    ],
+    aboutFacts: [
+      ["Basée à", "Paris, France"],
+      ["Formation", "MSc IA & Data — 2026"],
+      ["Langues", "Français · Anglais"],
+      ["Statut", "Freelance + Chief of Staff"]
+    ],
+
+    cosEyebrow: "02 — Chief of Staff",
+    cosTitle: "Le bras droit qui tient toutes les ficelles.",
+    cosIntro: "Au quotidien, je multiplie les casquettes pour faire avancer l'entreprise — stratégie, équipe, chiffres, marketing.",
+    cosMissions: [
+      { tag: "Stratégie", title: "Pitch decks & narrative", body: "Conception et mise en forme de pitch decks investisseurs, support de comité, présentations clients." },
+      { tag: "Opérations", title: "Reporting & KPI", body: "Mise en place du suivi des indicateurs, dashboards, reporting hebdo et mensuel pour le CEO et le board." },
+      { tag: "Équipe", title: "Formation & onboarding", body: "Création des parcours de formation interne, documentation des process, onboarding des nouveaux arrivants." },
+      { tag: "Croissance", title: "Marketing & CA", body: "Pilotage des leviers d'acquisition, campagnes, lancement produit. Augmentation du chiffre d'affaires via une exécution rigoureuse." },
+      { tag: "Tech", title: "Automatisations", body: "Mise en place de workflows automatisés (n8n, Make) pour libérer du temps à l'équipe et fiabiliser les opérations." },
+      { tag: "Direction", title: "Bras droit du CEO", body: "Présence sur tous les sujets stratégiques, prise de décision, arbitrages, suivi des chantiers transverses." }
+    ],
+
+    servicesEyebrow: "03 — Services freelance",
+    servicesTitle: "Communication digitale, de A à Z.",
+    servicesIntro: "Je conçois et déploie la stratégie de communication des marques que j'accompagne — souvent sur 6 mois, parfois plus.",
+    services: [
+      { number: "S/01", title: "Stratégie éditoriale", items: ["Recherche d'idées et de tendances", "Planning éditorial mensuel", "Lignes éditoriales par canal", "Storytelling de marque"] },
+      { number: "S/02", title: "Création de contenu", items: ["Design de publications (Canva)", "Reels & vidéos courtes", "Rédaction de captions", "Carrousels LinkedIn"] },
+      { number: "S/03", title: "Gestion multi-canal", items: ["Instagram · LinkedIn", "TikTok · YouTube", "Programmation & publication", "Engagement communauté"] },
+      { number: "S/04", title: "Automatisations & ops", items: ["Workflows n8n / Make", "Onboarding clients", "Intégrations Slack / Notion", "Sites web sur-mesure"] }
+    ],
+
+    workEyebrow: "04 — Cas clients",
+    workTitle: "Des résultats, pas des promesses.",
+    workIntro: "Sélection de missions récentes — ce que j'ai fait, comment, et l'impact mesuré.",
+    cases: [
+      {
+        client: "Startup IA",
+        type: "Mission longue · 6 mois",
+        role: "Direction de la communication",
+        teaser: "Rebranding visuel + stratégie social media multi-canal pour une startup dans l'IA.",
+        scope: ["Rebranding visuel qualitatif", "Design des publications", "Reels & vidéos courtes", "Rédaction des captions", "Planning éditorial complet", "4 canaux : Instagram, LinkedIn, TikTok, YouTube"],
+        stats: [
+          { value: "+2 000", label: "abonnés en 6 mois" },
+          { value: "2,86 %", label: "taux d'engagement" },
+          { value: "4", label: "canaux pilotés" }
+        ]
+      },
+      {
+        client: "Podcasteuse",
+        type: "Mission longue · en cours",
+        role: "Stratégie & édito",
+        teaser: "Stratégie de communication 360° pour une podcasteuse — uniquement la partie éditoriale.",
+        scope: ["Recherche d'idées de contenu", "News hebdomadaires", "Programmation des publications", "1 post / semaine sur chaque canal", "Multi-canal : LinkedIn, TikTok, Instagram"],
+        stats: [
+          { value: "5 %", label: "taux d'engagement" },
+          { value: "3", label: "canaux pilotés" },
+          { value: "Hebdo", label: "rythme de publication" }
+        ]
+      },
+      {
+        client: "Sites web sur-mesure",
+        type: "Missions ponctuelles",
+        role: "Conception & développement",
+        teaser: "Création de sites internet de A à Z pour des clients freelances et indépendants.",
+        scope: ["Brief & wireframes", "Design sur-mesure", "Développement no-code / code", "SEO de base", "Mise en ligne & formation client"],
+        stats: [
+          { value: "100 %", label: "sur-mesure" },
+          { value: "A → Z", label: "prise en charge" }
+        ]
+      }
+    ],
+
+    statsEyebrow: "Chiffres",
+    stats: [
+      { value: "+2000", label: "abonnés générés", sub: "sur un seul mandat" },
+      { value: "5 %", label: "engagement max", sub: "vs. 1-2 % industrie" },
+      { value: "6 mois", label: "durée moyenne", sub: "des missions long format" },
+      { value: "4", label: "canaux pilotés", sub: "Instagram, LinkedIn, TikTok, YouTube" }
+    ],
+
+    skillsEyebrow: "05 — Outils & compétences",
+    skillsTitle: "La stack que j'utilise au quotidien.",
+    skillCategories: [
+      { name: "Design & création", tools: ["Canva", "Figma", "Capcut"] },
+      { name: "Automatisations", tools: ["n8n", "Make", "Zapier"] },
+      { name: "IA & data", tools: ["Python", "Dust", "Dataiku", "Claude Code", "RAG"] },
+      { name: "Dev & ops", tools: ["Cursor", "VSCode", "GitHub", "Vercel", "Supabase"] },
+      { name: "Productivité", tools: ["Notion", "Slack", "Tableau", "Meta Business"] }
+    ],
+
+    processEyebrow: "Process",
+    processTitle: "Comment on travaille ensemble.",
+    process: [
+      { step: "01", title: "Découverte", body: "Appel de cadrage, audit existant, objectifs business." },
+      { step: "02", title: "Stratégie", body: "Lignes éditoriales, planning, KPIs, charte visuelle si besoin." },
+      { step: "03", title: "Production", body: "Création des contenus, automatisations, mise en place des outils." },
+      { step: "04", title: "Pilotage", body: "Publication, engagement, reporting mensuel, ajustements continus." }
+    ],
+
+    contactEyebrow: "06 — Contact",
+    contactTitle: "Et si on se parlait ?",
+    contactBody: "Pour une mission freelance, une collaboration ou simplement échanger — j'écoute toujours les beaux projets.",
+    contactFormName: "Nom",
+    contactFormEmail: "Email",
+    contactFormProject: "Type de projet",
+    contactFormProjectOptions: ["Stratégie social media", "Création de contenu", "Automatisations", "Site web", "Autre"],
+    contactFormMessage: "Parle-moi de ton projet",
+    contactFormSubmit: "Envoyer",
+    contactFormSent: "Message envoyé ✓",
+    contactDirect: "Ou directement par email",
+    contactEmail: "binta@beccsstudio.com",
+
+    blogEyebrow: "Journal",
+    blogTitle: "Notes & lectures",
+    blog: [
+      { date: "Avril 2026", tag: "IA", title: "Automatiser sa veille avec n8n + Claude" },
+      { date: "Mars 2026", tag: "Édito", title: "Le calendrier éditorial qui tient 6 mois" },
+      { date: "Février 2026", tag: "Stratégie", title: "Chief of Staff : le rôle qu'on ne comprend pas" }
+    ],
+
+    footerCta: "Disponible pour de nouvelles missions",
+    footerCopyright: "© 2026 Binta Kande — Tous droits réservés",
+    footerCredit: "Design & code · Becc's Studio"
+  },
+
+  en: {
+    nav: ["Index", "About", "Chief of Staff", "Services", "Work", "Contact"],
+    status: "Available — Q3 2026",
+    heroEyebrow: "Portfolio · 2026",
+    heroName: ["Binta", "Kande"],
+    heroSubtitle: "Chief of Staff · MSc AI & Data · Freelance Digital Marketing",
+    heroDescription: "At the crossroads of digital, communication and AI — I bring unique projects to life where creativity meets strategy.",
+    heroMantra: "Create, solve, move forward.",
+    heroCta: "Let's work together",
+    heroCv: "Download CV",
+    scrollHint: "Scroll",
+
+    aboutEyebrow: "01 — About",
+    aboutTitle: "At the intersection of strategy and craft.",
+    aboutBody: [
+      "Currently pursuing a MSc in AI & Data, I work alongside the CEO of a young company — a Chief of Staff role where I cover everything: strategy, operations, marketing, automations.",
+      "On the side, I help startups and creators build their digital presence — editorial strategy, content design, workflow automation.",
+      "What lights me up: turning a fuzzy idea into a system that runs. Bringing beauty to operations."
+    ],
+    aboutFacts: [
+      ["Based in", "Paris, France"],
+      ["Studying", "MSc AI & Data — 2026"],
+      ["Languages", "French · English"],
+      ["Status", "Freelance + Chief of Staff"]
+    ],
+
+    cosEyebrow: "02 — Chief of Staff",
+    cosTitle: "The right hand who pulls every string.",
+    cosIntro: "Day to day, I wear many hats to push the company forward — strategy, team, numbers, marketing.",
+    cosMissions: [
+      { tag: "Strategy", title: "Pitch decks & narrative", body: "Design and polish of investor pitch decks, board updates, client presentations." },
+      { tag: "Ops", title: "Reporting & KPIs", body: "Setting up KPI tracking, dashboards, weekly and monthly reporting for CEO and board." },
+      { tag: "Team", title: "Training & onboarding", body: "Building internal training paths, documenting processes, onboarding new joiners." },
+      { tag: "Growth", title: "Marketing & revenue", body: "Driving acquisition channels, campaigns, product launches. Growing revenue through rigorous execution." },
+      { tag: "Tech", title: "Automations", body: "Building automated workflows (n8n, Make) to free up the team's time and stabilize operations." },
+      { tag: "Lead", title: "CEO's right hand", body: "Present on every strategic topic — decisions, trade-offs, cross-functional projects." }
+    ],
+
+    servicesEyebrow: "03 — Freelance services",
+    servicesTitle: "Digital communication, end to end.",
+    servicesIntro: "I design and deploy communication strategies for the brands I work with — usually 6-month engagements, sometimes more.",
+    services: [
+      { number: "S/01", title: "Editorial strategy", items: ["Idea & trend research", "Monthly content calendar", "Channel-specific tone", "Brand storytelling"] },
+      { number: "S/02", title: "Content creation", items: ["Post design (Canva)", "Reels & short-form video", "Caption writing", "LinkedIn carousels"] },
+      { number: "S/03", title: "Multi-channel ops", items: ["Instagram · LinkedIn", "TikTok · YouTube", "Scheduling & publishing", "Community engagement"] },
+      { number: "S/04", title: "Automations & ops", items: ["n8n / Make workflows", "Client onboarding", "Slack / Notion integrations", "Custom websites"] }
+    ],
+
+    workEyebrow: "04 — Case studies",
+    workTitle: "Results, not promises.",
+    workIntro: "A selection of recent work — what I did, how, and measured impact.",
+    cases: [
+      {
+        client: "AI startup",
+        type: "Long engagement · 6 months",
+        role: "Communication lead",
+        teaser: "Visual rebrand + multi-channel social strategy for an AI startup.",
+        scope: ["Quality visual rebranding", "Post design", "Reels & short videos", "Caption writing", "Full editorial calendar", "4 channels: Instagram, LinkedIn, TikTok, YouTube"],
+        stats: [
+          { value: "+2,000", label: "followers in 6 months" },
+          { value: "2.86%", label: "engagement rate" },
+          { value: "4", label: "channels managed" }
+        ]
+      },
+      {
+        client: "Podcaster",
+        type: "Long engagement · ongoing",
+        role: "Strategy & editorial",
+        teaser: "360° communication strategy for a podcaster — editorial-only.",
+        scope: ["Content idea research", "Weekly news posts", "Scheduling", "1 post / week per channel", "Multi-channel: LinkedIn, TikTok, Instagram"],
+        stats: [
+          { value: "5%", label: "engagement rate" },
+          { value: "3", label: "channels managed" },
+          { value: "Weekly", label: "publishing cadence" }
+        ]
+      },
+      {
+        client: "Custom websites",
+        type: "Project-based",
+        role: "Design & development",
+        teaser: "End-to-end website creation for freelance and independent clients.",
+        scope: ["Brief & wireframes", "Custom design", "No-code / code build", "Basic SEO", "Launch & client training"],
+        stats: [
+          { value: "100%", label: "tailored" },
+          { value: "A → Z", label: "ownership" }
+        ]
+      }
+    ],
+
+    statsEyebrow: "Numbers",
+    stats: [
+      { value: "+2000", label: "followers generated", sub: "on a single engagement" },
+      { value: "5%", label: "peak engagement", sub: "vs. 1-2% industry avg" },
+      { value: "6 mo", label: "average duration", sub: "of long-form engagements" },
+      { value: "4", label: "channels managed", sub: "Instagram, LinkedIn, TikTok, YouTube" }
+    ],
+
+    skillsEyebrow: "05 — Tools & skills",
+    skillsTitle: "The stack I use every day.",
+    skillCategories: [
+      { name: "Design & craft", tools: ["Canva", "Figma", "Capcut"] },
+      { name: "Automations", tools: ["n8n", "Make", "Zapier"] },
+      { name: "AI & data", tools: ["Python", "Dust", "Dataiku", "Claude Code", "RAG"] },
+      { name: "Dev & ops", tools: ["Cursor", "VSCode", "GitHub", "Vercel", "Supabase"] },
+      { name: "Productivity", tools: ["Notion", "Slack", "Tableau", "Meta Business"] }
+    ],
+
+    processEyebrow: "Process",
+    processTitle: "How we'll work together.",
+    process: [
+      { step: "01", title: "Discovery", body: "Kickoff call, audit of existing, business goals." },
+      { step: "02", title: "Strategy", body: "Editorial lines, calendar, KPIs, visual identity if needed." },
+      { step: "03", title: "Production", body: "Content creation, automations, tooling setup." },
+      { step: "04", title: "Operating", body: "Publishing, engagement, monthly reporting, continuous tuning." }
+    ],
+
+    contactEyebrow: "06 — Contact",
+    contactTitle: "Let's talk.",
+    contactBody: "For a freelance engagement, a collaboration, or just to chat — I always make time for great projects.",
+    contactFormName: "Name",
+    contactFormEmail: "Email",
+    contactFormProject: "Project type",
+    contactFormProjectOptions: ["Social media strategy", "Content creation", "Automations", "Website", "Other"],
+    contactFormMessage: "Tell me about your project",
+    contactFormSubmit: "Send",
+    contactFormSent: "Message sent ✓",
+    contactDirect: "Or by email",
+    contactEmail: "binta@beccsstudio.com",
+
+    blogEyebrow: "Journal",
+    blogTitle: "Notes & reads",
+    blog: [
+      { date: "April 2026", tag: "AI", title: "Automating your watch with n8n + Claude" },
+      { date: "March 2026", tag: "Editorial", title: "The 6-month editorial calendar that holds" },
+      { date: "February 2026", tag: "Strategy", title: "Chief of Staff: the role nobody understands" }
+    ],
+
+    footerCta: "Available for new engagements",
+    footerCopyright: "© 2026 Binta Kande — All rights reserved",
+    footerCredit: "Design & code · Becc's Studio"
+  }
+};
+
+// ─── Tweaks Panel ─────────────────────────────────────────────────────────────
+const __TWEAKS_STYLE = `
+  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
+    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
+    transform:scale(var(--dc-inv-zoom,1));transform-origin:bottom right;
+    background:rgba(250,249,247,.78);color:#29261b;
+    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
+    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 8px 10px 14px;cursor:move;user-select:none}
+  .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
+  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
+    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+  .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
+  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
+    overflow-y:auto;overflow-x:hidden;min-height:0;
+    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+  .twk-row{display:flex;flex-direction:column;gap:5px}
+  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;color:rgba(41,38,27,.72)}
+  .twk-lbl>span:first-child{font-weight:500}
+  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(41,38,27,.45);padding:10px 0 0}
+  .twk-sect:first-child{padding-top:0}
+  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
+    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
+  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
+  select.twk-field{padding-right:22px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 8px center}
+  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
+    background:rgba(0,0,0,.06);user-select:none}
+  .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
+    background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);
+    transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
+  .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
+    background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
+    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2}
+  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
+    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
+  .twk-toggle[data-on="1"]{background:#34c759}
+  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
+  .twk-chips{display:flex;gap:6px}
+  .twk-chip{position:relative;appearance:none;flex:1;min-width:0;height:46px;
+    padding:0;border:0;border-radius:6px;overflow:hidden;cursor:default;
+    box-shadow:0 0 0 .5px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);
+    transition:transform .12s cubic-bezier(.3,.7,.4,1),box-shadow .12s}
+  .twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),0 2px 6px rgba(0,0,0,.15)}
+  .twk-chip svg{position:absolute;top:6px;left:6px;width:13px;height:13px;
+    filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
+`;
+
+function useTweaks(defaults) {
+  const [values, setValues] = React.useState(defaults);
+  const setTweak = React.useCallback((keyOrEdits, val) => {
+    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
+      ? keyOrEdits : { [keyOrEdits]: val };
+    setValues((prev) => ({ ...prev, ...edits }));
+  }, []);
+  return [values, setTweak];
+}
+
+function TweaksPanel({ title = 'Tweaks', children }) {
+  const [open, setOpen] = React.useState(false);
+  const dragRef = React.useRef(null);
+  const offsetRef = React.useRef({ x: 16, y: 16 });
+  const PAD = 16;
+
+  const clampToViewport = React.useCallback(() => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const w = panel.offsetWidth, h = panel.offsetHeight;
+    const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
+    const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
+    offsetRef.current = {
+      x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)),
+      y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)),
+    };
+    panel.style.right = offsetRef.current.x + 'px';
+    panel.style.bottom = offsetRef.current.y + 'px';
+  }, []);
+
+  React.useEffect(() => {
+    const onMsg = (e) => {
+      const t = e?.data?.type;
+      if (t === '__activate_edit_mode') setOpen(true);
+      else if (t === '__deactivate_edit_mode') setOpen(false);
+    };
+    window.addEventListener('message', onMsg);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+
+  const onDragStart = (e) => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    const sx = e.clientX, sy = e.clientY;
+    const startRight = window.innerWidth - r.right;
+    const startBottom = window.innerHeight - r.bottom;
+    const move = (ev) => {
+      offsetRef.current = { x: startRight - (ev.clientX - sx), y: startBottom - (ev.clientY - sy) };
+      clampToViewport();
+    };
+    const up = () => { window.removeEventListener('mousemove', move); window.removeEventListener('mouseup', up); };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+  };
+
+  if (!open) return null;
+  return (
+    <>
+      <style>{__TWEAKS_STYLE}</style>
+      <div ref={dragRef} className="twk-panel" style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
+        <div className="twk-hd" onMouseDown={onDragStart}>
+          <b>{title}</b>
+          <button className="twk-x" onClick={() => setOpen(false)}>✕</button>
+        </div>
+        <div className="twk-body">{children}</div>
+      </div>
+    </>
+  );
+}
+
+function TweakSection({ label, children }) {
+  return (<><div className="twk-sect">{label}</div>{children}</>);
+}
+
+function TweakRow({ label, value, children, inline = false }) {
+  return (
+    <div className={inline ? 'twk-row twk-row-h' : 'twk-row'}>
+      <div className="twk-lbl"><span>{label}</span>{value != null && <span className="twk-val">{value}</span>}</div>
+      {children}
+    </div>
+  );
+}
+
+function TweakRadio({ label, value, options, onChange }) {
+  const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
+  const idx = Math.max(0, opts.findIndex((o) => o.value === value));
+  const n = opts.length;
+  const trackRef = React.useRef(null);
+  const segAt = (clientX) => {
+    const r = trackRef.current.getBoundingClientRect();
+    const i = Math.floor(((clientX - r.left - 2) / (r.width - 4)) * n);
+    return opts[Math.max(0, Math.min(n - 1, i))].value;
+  };
+  const onPointerDown = (e) => {
+    onChange(segAt(e.clientX));
+    const move = (ev) => { const v = segAt(ev.clientX); if (v !== value) onChange(v); };
+    const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+  return (
+    <TweakRow label={label}>
+      <div ref={trackRef} className="twk-seg" onPointerDown={onPointerDown}>
+        <div className="twk-seg-thumb" style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`, width: `calc((100% - 4px) / ${n})` }} />
+        {opts.map((o) => <button key={o.value} type="button">{o.label}</button>)}
+      </div>
+    </TweakRow>
+  );
+}
+
+function TweakSelect({ label, value, options, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>
+        {options.map((o) => { const v = typeof o === 'object' ? o.value : o; const l = typeof o === 'object' ? o.label : o; return <option key={v} value={v}>{l}</option>; })}
+      </select>
+    </TweakRow>
+  );
+}
+
+function TweakColor({ label, value, options, onChange }) {
+  const key = (o) => String(JSON.stringify(o)).toLowerCase();
+  const cur = key(value);
+  const __twkIsLight = (hex) => {
+    const h = String(hex).replace('#', '');
+    const x = h.length === 3 ? h.replace(/./g, (c) => c + c) : h.padEnd(6, '0');
+    const n = parseInt(x.slice(0, 6), 16);
+    if (Number.isNaN(n)) return true;
+    const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    return r * 299 + g * 587 + b * 114 > 148000;
+  };
+  return (
+    <TweakRow label={label}>
+      <div className="twk-chips">
+        {options.map((o, i) => {
+          const colors = Array.isArray(o) ? o : [o];
+          const [hero] = colors;
+          const on = key(o) === cur;
+          return (
+            <button key={i} type="button" className="twk-chip" data-on={on ? '1' : '0'} style={{ background: hero }} onClick={() => onChange(o)}>
+              {on && <svg viewBox="0 0 14 14"><path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" stroke={__twkIsLight(hero) ? 'rgba(0,0,0,.78)' : '#fff'} /></svg>}
+            </button>
+          );
+        })}
+      </div>
+    </TweakRow>
+  );
+}
+
+// ─── Reveal + Magnetic ────────────────────────────────────────────────────────
+function Reveal({ children, delay = 0, y = 24, className = "" }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : `translateY(${y}px)`, transition: `opacity 1.1s cubic-bezier(.2,.8,.2,1) ${delay}ms, transform 1.1s cubic-bezier(.2,.8,.2,1) ${delay}ms` }}>
+      {children}
+    </div>
+  );
+}
+
+function Magnetic({ children, strength = 0.25, className = "", ...props }) {
+  const ref = useRef(null);
+  const onMove = (e) => {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.transform = `translate(${(e.clientX - (r.left + r.width / 2)) * strength}px, ${(e.clientY - (r.top + r.height / 2)) * strength}px)`;
+  };
+  const onLeave = () => { if (ref.current) ref.current.style.transform = "translate(0,0)"; };
+  return (
+    <div ref={ref} onMouseMove={onMove} onMouseLeave={onLeave} className={className} style={{ transition: "transform 0.4s cubic-bezier(.2,.8,.2,1)", display: "inline-block" }} {...props}>
+      {children}
+    </div>
+  );
+}
+
+// ─── Hero ─────────────────────────────────────────────────────────────────────
+function Hero({ t, heroVariant }) {
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    const onMove = (e) => setMouse({ x: e.clientX / window.innerWidth - 0.5, y: e.clientY / window.innerHeight - 0.5 });
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+  const orbStyle = { transform: `translate(${mouse.x * 30}px, ${mouse.y * 30}px)` };
+
+  if (heroVariant === "giant") return (
+    <section id="home" className="hero hero--giant">
+      <div className="hero__orb" style={orbStyle} />
+      <div className="hero__giant-wrap">
+        <Reveal><p className="eyebrow">{t.heroEyebrow}</p></Reveal>
+        <Reveal delay={120}><h1 className="hero__giant-name"><span>{t.heroName[0]}</span><span className="serif-italic">{t.heroName[1]}</span></h1></Reveal>
+        <Reveal delay={240}><div className="hero__giant-meta"><p className="hero__subtitle">{t.heroSubtitle}</p><p className="hero__mantra serif-italic">{t.heroMantra}</p></div></Reveal>
+        <Reveal delay={360}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic><Magnetic strength={0.15}><a href="#" className="btn btn--ghost">{t.heroCv} <span>↓</span></a></Magnetic></div></Reveal>
+      </div>
+      <div className="hero__scroll-hint"><span className="dot-pulse" />{t.scrollHint}</div>
+    </section>
+  );
+
+  if (heroVariant === "asymmetric") return (
+    <section id="home" className="hero hero--asym">
+      <div className="hero__orb" style={orbStyle} />
+      <div className="hero__asym-grid">
+        <div className="hero__asym-left">
+          <Reveal><p className="eyebrow">{t.heroEyebrow}</p></Reveal>
+          <Reveal delay={120}><h1 className="hero__asym-name">{t.heroName[0]}<br /><span className="serif-italic">{t.heroName[1]}.</span></h1></Reveal>
+        </div>
+        <div className="hero__asym-right">
+          <Reveal delay={240}><p className="hero__subtitle">{t.heroSubtitle}</p></Reveal>
+          <Reveal delay={300}><p className="hero__description">{t.heroDescription}</p></Reveal>
+          <Reveal delay={360}><p className="hero__mantra serif-italic">— {t.heroMantra}</p></Reveal>
+          <Reveal delay={420}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic><Magnetic strength={0.15}><a href="#" className="btn btn--ghost">{t.heroCv} <span>↓</span></a></Magnetic></div></Reveal>
+        </div>
+        <div className="hero__asym-portrait"><Reveal delay={480}><div className="portrait-slot" style={orbStyle}><span className="portrait-mono">portrait · drop in</span></div></Reveal></div>
+      </div>
+      <div className="hero__scroll-hint"><span className="dot-pulse" />{t.scrollHint}</div>
+    </section>
+  );
+
+  return (
+    <section id="home" className="hero hero--split">
+      <div className="hero__orb" style={orbStyle} />
+      <div className="hero__split-grid">
+        <div className="hero__split-left">
+          <Reveal><p className="eyebrow">{t.heroEyebrow}</p></Reveal>
+          <Reveal delay={120}><h1 className="hero__split-name">{t.heroName[0]}<br /><span className="serif-italic">{t.heroName[1]}</span></h1></Reveal>
+          <Reveal delay={240}><p className="hero__subtitle">{t.heroSubtitle}</p></Reveal>
+          <Reveal delay={300}><p className="hero__description">{t.heroDescription}</p></Reveal>
+          <Reveal delay={360}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic><Magnetic strength={0.15}><a href="#" className="btn btn--ghost">{t.heroCv} <span>↓</span></a></Magnetic></div></Reveal>
+        </div>
+        <Reveal delay={300} className="hero__split-right">
+          <div className="hero__visual" style={orbStyle}>
+            <div className="hero__visual-disc">
+              <span className="hero__visual-mono">B · K</span>
+              <div className="hero__visual-photo"><span className="portrait-mono">photo · drop in</span></div>
+              <svg className="hero__visual-ring" viewBox="0 0 200 200">
+                <defs><path id="circle" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" /></defs>
+                <text className="hero__visual-text"><textPath href="#circle">{t.heroMantra} {t.heroMantra} {t.heroMantra} </textPath></text>
+              </svg>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+      <div className="hero__scroll-hint"><span className="dot-pulse" />{t.scrollHint}</div>
+    </section>
+  );
+}
+
+// ─── Marquee ──────────────────────────────────────────────────────────────────
+function Marquee({ items, speed = 40 }) {
+  const repeated = [...items, ...items, ...items];
+  return (
+    <div className="marquee" aria-hidden>
+      <div className="marquee__track" style={{ animationDuration: `${speed}s` }}>
+        {repeated.map((it, i) => <span key={i} className="marquee__item">{it}<span className="marquee__sep serif-italic">✦</span></span>)}
+      </div>
+    </div>
+  );
+}
+
+// ─── Manifesto ────────────────────────────────────────────────────────────────
+function Manifesto({ t }) {
+  const [scroll, setScroll] = useState(0);
+  const ref = useRef(null);
+  useEffect(() => {
+    const onScroll = () => {
+      if (!ref.current) return;
+      const r = ref.current.getBoundingClientRect();
+      const progress = 1 - (r.top + r.height) / (window.innerHeight + r.height);
+      setScroll(Math.max(0, Math.min(1, progress)));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const fullText = t.heroDescription;
+  const keywords = ["Digital", "IA", "AI", "créativité", "stratégie", "creativity", "strategy"];
+  const tokens = fullText.split(/(\s+)/);
+  return (
+    <section ref={ref} className="manifesto">
+      <div className="manifesto__bg-word" style={{ transform: `translateX(${-15 + scroll * 30}%)` }}>BINTA · KANDE</div>
+      <div className="container manifesto__inner">
+        <div className="manifesto__side">
+          <span className="manifesto__quote-mark serif-italic">"</span>
+          <span className="mono manifesto__label">Manifesto</span>
+        </div>
+        <Reveal>
+          <p className="manifesto__text">
+            {tokens.map((tok, i) => {
+              const clean = tok.replace(/[^\p{L}]/gu, "");
+              const isKw = keywords.some(k => clean.toLowerCase() === k.toLowerCase());
+              return <span key={i} className={isKw ? "manifesto__big manifesto__kw serif-italic" : "manifesto__big"}>{tok}</span>;
+            })}
+          </p>
+          <div className="manifesto__sign">
+            <span className="serif-italic">— Binta K.</span>
+            <span className="manifesto__rule" />
+            <span className="mono">Becc's Studio · 2026</span>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+// ─── About ────────────────────────────────────────────────────────────────────
+function About({ t }) {
+  return (
+    <section id="about" className="about">
+      <div className="container">
+        <div className="section-head">
+          <Reveal><p className="eyebrow">{t.aboutEyebrow}</p></Reveal>
+          <Reveal delay={100}><h2 className="section-title">{t.aboutTitle.split(" ").map((w, i) => <span key={i} className={i % 5 === 2 ? "serif-italic" : ""}>{w} </span>)}</h2></Reveal>
+        </div>
+        <div className="about__collage">
+          <Reveal delay={100} className="about__photo about__photo--1"><div className="about__photo-inner"><span className="portrait-mono">portrait · 4:5</span></div><span className="about__photo-tag mono">studio · 2026</span></Reveal>
+          <Reveal delay={220} className="about__photo about__photo--2"><div className="about__photo-inner"><span className="portrait-mono">desk · 3:4</span></div><span className="about__photo-tag mono">workflow</span></Reveal>
+          <Reveal delay={340} className="about__photo about__photo--3"><div className="about__photo-inner"><span className="portrait-mono">moodboard · 1:1</span></div><span className="about__photo-tag mono">inspiration</span></Reveal>
+          <Reveal delay={180} className="about__photo about__photo--4"><div className="about__photo-inner"><span className="portrait-mono">on-site · 4:3</span></div><span className="about__photo-tag mono">team day</span></Reveal>
+        </div>
+        <div className="about__grid">
+          <div className="about__body">
+            {t.aboutBody.map((p, i) => <Reveal key={i} delay={i * 80}><p className="prose">{p}</p></Reveal>)}
+          </div>
+          <Reveal delay={200} className="about__facts">
+            {t.aboutFacts.map(([k, v], i) => <div className="about__fact" key={i}><span className="about__fact-key">{k}</span><span className="about__fact-val">{v}</span></div>)}
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Chief of Staff ───────────────────────────────────────────────────────────
+function ChiefOfStaff({ t }) {
+  return (
+    <section id="cos" className="cos">
+      <div className="container">
+        <div className="section-head">
+          <Reveal><p className="eyebrow">{t.cosEyebrow}</p></Reveal>
+          <Reveal delay={100}><h2 className="section-title">{t.cosTitle.split(" ").map((w, i) => <span key={i} className={i % 4 === 1 ? "serif-italic" : ""}>{w} </span>)}</h2></Reveal>
+          <Reveal delay={200}><p className="section-intro">{t.cosIntro}</p></Reveal>
+        </div>
+        <div className="cos__grid">
+          {t.cosMissions.map((m, i) => (
+            <Reveal key={i} delay={i * 70} className="cos__card">
+              <div className="cos__card-top"><span className="cos__num">0{i + 1}</span><span className="cos__tag">{m.tag}</span></div>
+              <h3 className="cos__title">{m.title}</h3>
+              <p className="cos__body">{m.body}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Services ─────────────────────────────────────────────────────────────────
+function Services({ t }) {
+  return (
+    <section id="services" className="services">
+      <div className="container">
+        <div className="section-head">
+          <Reveal><p className="eyebrow">{t.servicesEyebrow}</p></Reveal>
+          <Reveal delay={100}><h2 className="section-title">{t.servicesTitle.split(" ").map((w, i) => <span key={i} className={i === 1 ? "serif-italic" : ""}>{w} </span>)}</h2></Reveal>
+          <Reveal delay={200}><p className="section-intro">{t.servicesIntro}</p></Reveal>
+        </div>
+        <div className="services__grid">
+          {t.services.map((s, i) => (
+            <Reveal key={i} delay={i * 80} className="services__card">
+              <div className="services__card-head"><span className="services__num mono">{s.number}</span><h3 className="services__title">{s.title}</h3></div>
+              <ul className="services__list">{s.items.map((it, j) => <li key={j}><span className="services__bullet" />{it}</li>)}</ul>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Stats ────────────────────────────────────────────────────────────────────
+function Stats({ t }) {
+  return (
+    <section className="stats">
+      <div className="container">
+        <Reveal><p className="eyebrow eyebrow--center">{t.statsEyebrow}</p></Reveal>
+        <div className="stats__grid">
+          {t.stats.map((s, i) => (
+            <Reveal key={i} delay={i * 100} className="stats__cell">
+              <div className="stats__value serif-italic">{s.value}</div>
+              <div className="stats__label">{s.label}</div>
+              <div className="stats__sub mono">{s.sub}</div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Case Studies ─────────────────────────────────────────────────────────────
+function CaseStudies({ t }) {
+  const [open, setOpen] = useState3(0);
+  return (
+    <section id="work" className="work">
+      <div className="container">
+        <div className="section-head">
+          <Reveal><p className="eyebrow">{t.workEyebrow}</p></Reveal>
+          <Reveal delay={100}><h2 className="section-title">{t.workTitle.split(" ").map((w, i) => <span key={i} className={i === 0 ? "serif-italic" : ""}>{w} </span>)}</h2></Reveal>
+          <Reveal delay={200}><p className="section-intro">{t.workIntro}</p></Reveal>
+        </div>
+        <div className="work__list">
+          {t.cases.map((c, i) => {
+            const isOpen = open === i;
+            return (
+              <Reveal key={i} delay={i * 80} className={`work__row ${isOpen ? "is-open" : ""}`}>
+                <button className="work__head" onClick={() => setOpen(isOpen ? -1 : i)} aria-expanded={isOpen}>
+                  <span className="work__num mono">0{i + 1}</span>
+                  <span className="work__client">{c.client}</span>
+                  <span className="work__role">{c.role}</span>
+                  <span className="work__type mono">{c.type}</span>
+                  <span className="work__icon">{isOpen ? "—" : "+"}</span>
+                </button>
+                <div className="work__panel" style={{ maxHeight: isOpen ? 800 : 0 }}>
+                  <div className="work__panel-inner">
+                    <div className="work__panel-left">
+                      <p className="work__teaser">{c.teaser}</p>
+                      <ul className="work__scope">{c.scope.map((s, j) => <li key={j}><span className="services__bullet" />{s}</li>)}</ul>
+                    </div>
+                    <div className="work__panel-right">
+                      <div className="work__visual"><span className="portrait-mono">visual · {c.client.toLowerCase()}</span></div>
+                      <div className="work__stats">{c.stats.map((s, j) => <div className="work__stat" key={j}><div className="work__stat-val serif-italic">{s.value}</div><div className="work__stat-label mono">{s.label}</div></div>)}</div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Skills ───────────────────────────────────────────────────────────────────
+function Skills({ t }) {
+  const sectionRef = useRef3(null);
+  const [scrolled, setScrolled] = useState3(0);
+  useEffect3(() => {
+    const onScroll = () => {
+      const el = sectionRef.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const p = Math.max(0, Math.min(1, 1 - (r.top + r.height * 0.3) / (window.innerHeight + r.height * 0.3)));
+      setScrolled(p);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <section id="skills" className="skills" ref={sectionRef}>
+      <div className="skills__bg">
+        <span className="skills__shape skills__shape--1" style={{ transform: `translate(${scrolled * 80}px, ${-scrolled * 60}px) rotate(${scrolled * 60}deg)` }} />
+        <span className="skills__shape skills__shape--2" style={{ transform: `translate(${-scrolled * 60}px, ${scrolled * 80}px) rotate(${-scrolled * 90}deg)` }} />
+        <span className="skills__shape skills__shape--3" style={{ transform: `translate(${scrolled * 40}px, ${scrolled * 40}px) rotate(${scrolled * 120}deg)` }} />
+      </div>
+      <div className="container">
+        <div className="section-head">
+          <Reveal><p className="eyebrow">{t.skillsEyebrow}</p></Reveal>
+          <Reveal delay={100}><h2 className="section-title">{t.skillsTitle.split(" ").map((w, i) => <span key={i} className={i === 1 ? "serif-italic" : ""}>{w} </span>)}</h2></Reveal>
+        </div>
+        <div className="skills__rows">
+          {t.skillCategories.map((cat, i) => {
+            const reverse = i % 2 === 1;
+            const chips = [...cat.tools, ...cat.tools, ...cat.tools];
+            const offset = (scrolled - 0.5) * 200 * (reverse ? -1 : 1);
+            return (
+              <Reveal key={i} delay={i * 80} className="skills__row">
+                <div className="skills__row-head"><span className="skills__row-num mono">0{i + 1}</span><h3 className="skills__cat-name">{cat.name}</h3></div>
+                <div className={`skills__marquee ${reverse ? "is-reverse" : ""}`}>
+                  <div className="skills__marquee-track" style={{ transform: `translate3d(${offset}px, 0, 0)` }}>
+                    {chips.map((tool, j) => <span key={j} className="skills__chip skills__chip--anim mono"><span className="skills__chip-dot" />{tool}</span>)}
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Process ──────────────────────────────────────────────────────────────────
+function Process({ t }) {
+  return (
+    <section className="process">
+      <div className="container">
+        <div className="section-head">
+          <Reveal><p className="eyebrow">{t.processEyebrow}</p></Reveal>
+          <Reveal delay={100}><h2 className="section-title">{t.processTitle.split(" ").map((w, i) => <span key={i} className={i === 1 ? "serif-italic" : ""}>{w} </span>)}</h2></Reveal>
+        </div>
+        <div className="process__grid">
+          {t.process.map((p, i) => (
+            <Reveal key={i} delay={i * 100} className="process__step">
+              <div className="process__step-num serif-italic">{p.step}</div>
+              <h3 className="process__step-title">{p.title}</h3>
+              <p className="process__step-body">{p.body}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Blog ─────────────────────────────────────────────────────────────────────
+function Blog({ t }) {
+  return (
+    <section id="blog" className="blog">
+      <div className="container">
+        <div className="section-head">
+          <Reveal><p className="eyebrow">{t.blogEyebrow}</p></Reveal>
+          <Reveal delay={100}><h2 className="section-title"><span className="serif-italic">{t.blogTitle}</span></h2></Reveal>
+        </div>
+        <div className="blog__list">
+          {t.blog.map((post, i) => (
+            <Reveal key={i} delay={i * 70}>
+              <a href="#" className="blog__row">
+                <span className="blog__date mono">{post.date}</span>
+                <span className="blog__tag">{post.tag}</span>
+                <span className="blog__title">{post.title}</span>
+                <span className="blog__arrow">→</span>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Contact ──────────────────────────────────────────────────────────────────
+function Contact({ t }) {
+  const [form, setForm] = useState3({ name: "", email: "", project: t.contactFormProjectOptions[0], message: "" });
+  const [sent, setSent] = useState3(false);
+  const submit = (e) => {
+    e.preventDefault();
+    setSent(true);
+    setTimeout(() => setSent(false), 4000);
+    setForm({ name: "", email: "", project: t.contactFormProjectOptions[0], message: "" });
+  };
+  return (
+    <section id="contact" className="contact">
+      <div className="container">
+        <div className="contact__grid">
+          <div className="contact__left">
+            <Reveal><p className="eyebrow">{t.contactEyebrow}</p></Reveal>
+            <Reveal delay={100}><h2 className="contact__title">{t.contactTitle.split(" ").map((w, i) => <span key={i} className={i === 1 ? "serif-italic" : ""}>{w} </span>)}</h2></Reveal>
+            <Reveal delay={200}><p className="contact__body prose">{t.contactBody}</p></Reveal>
+            <Reveal delay={300}>
+              <div className="contact__direct">
+                <p className="mono">{t.contactDirect}</p>
+                <a href={`mailto:${t.contactEmail}`} className="contact__email serif-italic">{t.contactEmail}</a>
+              </div>
+            </Reveal>
+          </div>
+          <Reveal delay={200} className="contact__right">
+            <form className="contact__form" onSubmit={submit}>
+              <div className="contact__field"><label className="mono">{t.contactFormName}</label><input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></div>
+              <div className="contact__field"><label className="mono">{t.contactFormEmail}</label><input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} /></div>
+              <div className="contact__field"><label className="mono">{t.contactFormProject}</label><select value={form.project} onChange={(e) => setForm({ ...form, project: e.target.value })}>{t.contactFormProjectOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}</select></div>
+              <div className="contact__field"><label className="mono">{t.contactFormMessage}</label><textarea rows={4} required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} /></div>
+              <Magnetic><button type="submit" className="btn btn--primary contact__submit">{sent ? t.contactFormSent : t.contactFormSubmit} <span>{sent ? "✓" : "→"}</span></button></Magnetic>
+            </form>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+function Footer({ t }) {
+  return (
+    <footer className="footer">
+      <div className="container">
+        <div className="footer__big serif-italic">{t.heroName.join(" ")}.</div>
+        <div className="footer__row">
+          <div className="footer__col"><span className="dot-pulse" /><span className="mono">{t.footerCta}</span></div>
+          <div className="footer__col"><span className="mono">{t.footerCopyright}</span></div>
+          <div className="footer__col"><span className="mono">{t.footerCredit}</span></div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// ─── Custom Cursor ────────────────────────────────────────────────────────────
+function CustomCursor() {
+  const dotRef = useRefApp(null);
+  const ringRef = useRefApp(null);
+  useEffectApp(() => {
+    let dotX = 0, dotY = 0, ringX = 0, ringY = 0, mx = 0, my = 0;
+    const move = (e) => { mx = e.clientX; my = e.clientY; };
+    window.addEventListener("mousemove", move);
+    let raf;
+    const tick = () => {
+      dotX += (mx - dotX) * 0.6; dotY += (my - dotY) * 0.6;
+      ringX += (mx - ringX) * 0.18; ringY += (my - ringY) * 0.18;
+      if (dotRef.current) dotRef.current.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+      if (ringRef.current) ringRef.current.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+      raf = requestAnimationFrame(tick);
+    };
+    tick();
+    const updateHover = () => {
+      const el = document.elementFromPoint(mx, my);
+      const isHover = el && el.closest("a, button, [data-cursor-hover]");
+      if (ringRef.current) ringRef.current.classList.toggle("is-hover", !!isHover);
+    };
+    const hoverInterval = setInterval(updateHover, 50);
+    return () => { window.removeEventListener("mousemove", move); cancelAnimationFrame(raf); clearInterval(hoverInterval); };
+  }, []);
+  return (<><div ref={ringRef} className="cursor-ring" /><div ref={dotRef} className="cursor-dot" /></>);
+}
+
+// ─── Nav ──────────────────────────────────────────────────────────────────────
+function Nav({ lang, setLang, theme, setTheme, navLabels }) {
+  const [active, setActive] = useStateApp("home");
+  useEffectApp(() => {
+    const sections = ["home", "about", "cos", "services", "work", "contact"];
+    const onScroll = () => {
+      let current = "home";
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top < window.innerHeight * 0.4) current = id;
+      }
+      setActive(current);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const items = [
+    { id: "home", label: navLabels[0] }, { id: "about", label: navLabels[1] },
+    { id: "cos", label: navLabels[2] }, { id: "services", label: navLabels[3] },
+    { id: "work", label: navLabels[4] }, { id: "contact", label: navLabels[5] },
+  ];
+  return (
+    <nav className="nav">
+      <a href="#home" className="nav__brand"><span className="nav__brand-mark">✦</span>Becc's Studio</a>
+      <div className="nav__links">
+        {items.map((it) => <a key={it.id} href={`#${it.id}`} className={`nav__link ${active === it.id ? "is-active" : ""}`}>{it.label}</a>)}
+      </div>
+      <div className="nav__right">
+        <div className="nav__toggle">
+          <button className={lang === "fr" ? "is-active" : ""} onClick={() => setLang("fr")}>FR</button>
+          <button className={lang === "en" ? "is-active" : ""} onClick={() => setLang("en")}>EN</button>
+        </div>
+        <button className="nav__theme" onClick={() => setTheme(theme === "light" ? "dark" : "light")} aria-label="Toggle theme">
+          {theme === "light" ? "☾" : "☀"}
+        </button>
+      </div>
+    </nav>
+  );
+}
+
+// ─── Accent & Font options ────────────────────────────────────────────────────
+const TWEAK_DEFAULTS = { heroVariant: "split", accent: "terracotta", fontStack: "fraunces", theme: "light", lang: "fr" };
+const ACCENT_OPTIONS = {
+  terracotta: { light: "oklch(0.58 0.13 40)", soft: "oklch(0.85 0.06 50)", dark: "oklch(0.72 0.13 45)", darkSoft: "oklch(0.42 0.10 50)" },
+  sage:       { light: "oklch(0.55 0.06 145)", soft: "oklch(0.85 0.04 140)", dark: "oklch(0.72 0.07 145)", darkSoft: "oklch(0.42 0.05 145)" },
+  cobalt:     { light: "oklch(0.50 0.14 250)", soft: "oklch(0.82 0.06 245)", dark: "oklch(0.70 0.14 250)", darkSoft: "oklch(0.40 0.10 250)" },
+  plum:       { light: "oklch(0.45 0.12 340)", soft: "oklch(0.82 0.06 335)", dark: "oklch(0.68 0.13 340)", darkSoft: "oklch(0.38 0.10 340)" },
+};
+const FONT_OPTIONS = {
+  fraunces:   { serif: "'Fraunces', Georgia, serif", sans: "'Inter', sans-serif" },
+  instrument: { serif: "'Instrument Serif', Georgia, serif", sans: "'Geist', 'Inter', sans-serif" },
+  domaine:    { serif: "'DM Serif Display', Georgia, serif", sans: "'Geist', 'Inter', sans-serif" },
+};
+
+function MyTweaks({ tweaks, setTweak }) {
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="Hero">
+        <TweakSelect label="Layout" value={tweaks.heroVariant} onChange={(v) => setTweak("heroVariant", v)}
+          options={[{ value: "split", label: "Split (default)" }, { value: "giant", label: "Giant typo" }, { value: "asymmetric", label: "Asymmetric" }]} />
+      </TweakSection>
+      <TweakSection label="Color">
+        <TweakColor label="Accent" value={tweaks.accent} onChange={(v) => setTweak("accent", v)}
+          options={[{ value: "terracotta", color: "#C56A45" }, { value: "sage", color: "#7A9379" }, { value: "cobalt", color: "#3D6BB8" }, { value: "plum", color: "#8B4068" }]} />
+        <TweakRadio label="Theme" value={tweaks.theme} onChange={(v) => setTweak("theme", v)}
+          options={[{ value: "light", label: "Light" }, { value: "dark", label: "Dark" }]} />
+      </TweakSection>
+      <TweakSection label="Type">
+        <TweakSelect label="Font pairing" value={tweaks.fontStack} onChange={(v) => setTweak("fontStack", v)}
+          options={[{ value: "fraunces", label: "Fraunces × Inter" }, { value: "instrument", label: "Instrument × Geist" }, { value: "domaine", label: "DM Serif × Geist" }]} />
+      </TweakSection>
+      <TweakSection label="Language">
+        <TweakRadio label="Lang" value={tweaks.lang} onChange={(v) => setTweak("lang", v)}
+          options={[{ value: "fr", label: "FR" }, { value: "en", label: "EN" }]} />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+// ─── App ──────────────────────────────────────────────────────────────────────
+function App() {
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [lang, setLang] = useStateApp(tweaks.lang || "fr");
+  const [theme, setTheme] = useStateApp(tweaks.theme || "light");
+
+  useEffectApp(() => { if (tweaks.lang && tweaks.lang !== lang) setLang(tweaks.lang); }, [tweaks.lang]);
+  useEffectApp(() => { if (tweaks.theme && tweaks.theme !== theme) setTheme(tweaks.theme); }, [tweaks.theme]);
+  useEffectApp(() => { if (lang !== tweaks.lang) setTweak("lang", lang); }, [lang]);
+  useEffectApp(() => { if (theme !== tweaks.theme) setTweak("theme", theme); }, [theme]);
+  useEffectApp(() => { document.documentElement.setAttribute("data-theme", theme); }, [theme]);
+  useEffectApp(() => {
+    const a = ACCENT_OPTIONS[tweaks.accent] || ACCENT_OPTIONS.terracotta;
+    const root = document.documentElement;
+    root.style.setProperty("--accent", theme === "dark" ? a.dark : a.light);
+    root.style.setProperty("--accent-soft", theme === "dark" ? a.darkSoft : a.soft);
+  }, [tweaks.accent, theme]);
+  useEffectApp(() => {
+    const f = FONT_OPTIONS[tweaks.fontStack] || FONT_OPTIONS.fraunces;
+    document.documentElement.style.setProperty("--serif", f.serif);
+    document.documentElement.style.setProperty("--sans", f.sans);
+  }, [tweaks.fontStack]);
+
+  const t = CONTENT[lang];
+  const marqueeItems = ["Chief of Staff", "Digital Marketing", "Automations", "IA & Data", "Brand strategy", "Content design", "Editorial", "Available Q3 2026"];
+
+  return (
+    <>
+      <CustomCursor />
+      <Nav lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} navLabels={t.nav} />
+      <main>
+        <Hero t={t} heroVariant={tweaks.heroVariant} />
+        <Marquee items={marqueeItems} />
+        <Manifesto t={t} />
+        <About t={t} />
+        <ChiefOfStaff t={t} />
+        <Services t={t} />
+        <Stats t={t} />
+        <CaseStudies t={t} />
+        <Skills t={t} />
+        <Process t={t} />
+        <Blog t={t} />
+        <Contact t={t} />
+        <Footer t={t} />
+      </main>
+      <MyTweaks tweaks={tweaks} setTweak={setTweak} />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
