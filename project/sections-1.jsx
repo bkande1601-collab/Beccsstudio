@@ -206,16 +206,13 @@ function Hero({ t, heroVariant }) {
           <div className="hero__visual" style={orbStyle}>
             <div className="hero__visual-disc">
               <span className="hero__visual-mono">B · K</span>
-              <div className="hero__visual-photo">
-                <span className="portrait-mono">photo · drop in</span>
-              </div>
               <svg className="hero__visual-ring" viewBox="0 0 200 200">
                 <defs>
                   <path id="circle" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
                 </defs>
                 <text className="hero__visual-text">
                   <textPath href="#circle">
-                    {t.heroMantra} {t.heroMantra} {t.heroMantra} 
+                    {t.heroMantra} ✦ {t.heroMantra} ✦ {t.heroMantra} ✦
                   </textPath>
                 </text>
               </svg>
