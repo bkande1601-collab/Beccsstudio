@@ -1144,7 +1144,6 @@ function CaseStudies({ t }) {
               <Reveal key={i} delay={i * 80} className={`work__row ${isOpen ? "is-open" : ""}`}>
                 <button className="work__head" onClick={() => setOpen(isOpen ? -1 : i)} aria-expanded={isOpen}>
                   <span className="work__num mono">0{i + 1}</span>
-                  {c.image && <img src={c.image} alt={c.client} style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 6, background: "var(--bg-2)", padding: 4 }} />}
                   <span className="work__client">{c.client}</span>
                   <span className="work__role">{c.role}</span>
                   <span className="work__type mono">{c.type}</span>
@@ -1158,9 +1157,7 @@ function CaseStudies({ t }) {
                       {c.url && <a href={c.url} target="_blank" rel="noopener noreferrer" className="mono" style={{ fontSize: 12, color: "var(--accent)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4, marginTop: 16 }}>{c.client} ↗</a>}
                     </div>
                     <div className="work__panel-right">
-                      <div className="work__visual" style={{ background: "var(--bg-2)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
-                        {c.image ? <img src={c.image} alt={c.client} style={{ maxWidth: "80%", maxHeight: 120, objectFit: "contain" }} /> : <span className="portrait-mono">visual · {c.client.toLowerCase()}</span>}
-                      </div>
+                      <div className="work__visual"><span className="portrait-mono">visual · {c.client.toLowerCase()}</span></div>
                       <div className="work__stats">{c.stats.map((s, j) => <div className="work__stat" key={j}><div className="work__stat-val serif-italic">{s.value}</div><div className="work__stat-label mono">{s.label}</div></div>)}</div>
                     </div>
                   </div>
@@ -1318,7 +1315,7 @@ function Footer({ t }) {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer__big serif-italic">{t.heroName.join(" ")}.</div>
+        <div className="footer__big serif-italic">Becc's Studio.</div>
         <div className="footer__row">
           <div className="footer__col"><span className="dot-pulse" /><span className="mono">{t.footerCta}</span></div>
           <div className="footer__col"><span className="mono">{t.footerCopyright}</span></div>
