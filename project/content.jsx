@@ -132,7 +132,6 @@ const CONTENT = {
     blogEyebrow: "Journal",
     blogTitle: "Notes & lectures",
     blog: [
-      { date: "Avril 2026", tag: "IA", title: "Automatiser sa veille avec n8n + Claude" },
       { date: "Mars 2026", tag: "Édito", title: "Le calendrier éditorial qui tient 6 mois" },
       { date: "Février 2026", tag: "Stratégie", title: "Chief of Staff : le rôle qu'on ne comprend pas" }
     ],
@@ -274,7 +273,6 @@ const CONTENT = {
     blogEyebrow: "Journal",
     blogTitle: "Notes & reads",
     blog: [
-      { date: "April 2026", tag: "AI", title: "Automating your watch with n8n + Claude" },
       { date: "March 2026", tag: "Editorial", title: "The 6-month editorial calendar that holds" },
       { date: "February 2026", tag: "Strategy", title: "Chief of Staff: the role nobody understands" }
     ],
