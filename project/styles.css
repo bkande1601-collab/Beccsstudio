@@ -378,13 +378,6 @@ ul { list-style: none; }
   transition: opacity 0.4s ease, transform 0.5s cubic-bezier(.2,.8,.2,1);
   pointer-events: none;
 }
-.hero__visual-disc:hover .hero__visual-photo {
-  opacity: 1;
-  transform: scale(1);
-}
-.hero__visual-disc:hover .hero__visual-mono {
-  opacity: 0;
-}
 .hero__visual-ring {
   position: absolute;
   inset: -40px;

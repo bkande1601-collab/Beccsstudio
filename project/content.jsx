@@ -6,7 +6,7 @@ const CONTENT = {
     heroEyebrow: "Portfolio · 2026",
     heroName: ["Binta", "Kande"],
     heroSubtitle: "Chief of Staff · MSc IA & Data · Freelance Marketing Digital",
-    heroDescription: "À la croisée du Digital et de l'IA — je donne vie à des projets uniques où créativité et stratégie se rencontrent.",
+    heroDescription: "À la croisée du Digital et de l'IA, je donne vie à des projets uniques où créativité et stratégie se rencontrent.",
     heroMantra: "Créer, résoudre, avancer",
     heroCta: "Travaillons ensemble",
     heroCv: "Télécharger le CV",
@@ -15,7 +15,7 @@ const CONTENT = {
     aboutEyebrow: "01 — À propos",
     aboutTitle: "À l'intersection de la stratégie et de la création.",
     aboutBody: [
-      "Actuellement en MSc IA & Data, je travaille au plus près du CEO d'une jeune entreprise — un poste de Chief of Staff où je touche à tout : stratégie, opérations, marketing, automatisations.",
+      "Actuellement en MSc IA & Data, je travaille au plus près du CEO d'une jeune entreprise, un poste de Chief of Staff où je touche à tout : stratégie, opérations, marketing, automatisations.",
       "En parallèle, j'accompagne en freelance des startups et créatrices sur leur communication digitale, de la stratégie éditoriale au design des publications, jusqu'à l'automatisation de leurs workflows.",
       "Ce qui me fait vibrer : transformer une idée floue en système qui tourne. Mettre de la beauté dans l'opérationnel."
     ],
@@ -28,7 +28,7 @@ const CONTENT = {
 
     cosEyebrow: "02 — Chief of Staff",
     cosTitle: "Le bras droit qui tient toutes les ficelles.",
-    cosIntro: "Au quotidien, je multiplie les casquettes pour faire avancer l'entreprise — stratégie, équipe, chiffres, marketing.",
+    cosIntro: "Au quotidien, je multiplie les casquettes pour faire avancer l'entreprise : stratégie, équipe, chiffres, marketing.",
     cosMissions: [
       { tag: "Stratégie", title: "Pitch decks & narrative", body: "Conception et mise en forme de pitch decks investisseurs, support de comité, présentations clients." },
       { tag: "Opérations", title: "Reporting & KPI", body: "Mise en place du suivi des indicateurs, dashboards, reporting hebdo et mensuel pour le CEO et le board." },
@@ -40,7 +40,7 @@ const CONTENT = {
 
     servicesEyebrow: "03 — Services freelance",
     servicesTitle: "Communication digitale, de A à Z.",
-    servicesIntro: "Je conçois et déploie la stratégie de communication des marques que j'accompagne — souvent sur 6 mois, parfois plus.",
+    servicesIntro: "Je conçois et déploie la stratégie de communication des marques que j'accompagne, souvent sur 6 mois, parfois plus.",
     services: [
       { number: "S/01", title: "Stratégie éditoriale", items: ["Recherche d'idées et de tendances", "Planning éditorial mensuel", "Lignes éditoriales par canal", "Storytelling de marque"] },
       { number: "S/02", title: "Création de contenu", items: ["Design de publications (Canva)", "Reels & vidéos courtes", "Rédaction de captions", "Carrousels LinkedIn"] },
@@ -50,7 +50,7 @@ const CONTENT = {
 
     workEyebrow: "04 — Cas clients",
     workTitle: "Des résultats, pas des promesses.",
-    workIntro: "Sélection de missions récentes — ce que j'ai fait, comment, et l'impact mesuré.",
+    workIntro: "Sélection de missions récentes : ce que j'ai fait, comment, et l'impact mesuré.",
     cases: [
       {
         client: "Startup IA",
@@ -68,7 +68,7 @@ const CONTENT = {
         client: "Podcasteuse",
         type: "Mission longue · en cours",
         role: "Stratégie & édito",
-        teaser: "Stratégie de communication 360° pour une podcasteuse — uniquement la partie éditoriale.",
+        teaser: "Stratégie de communication 360° pour une podcasteuse, uniquement la partie éditoriale.",
         scope: ["Recherche d'idées de contenu", "News hebdomadaires", "Programmation des publications", "1 post / semaine sur chaque canal", "Multi-canal : LinkedIn, TikTok, Instagram"],
         stats: [
           { value: "5 %", label: "taux d'engagement" },
@@ -118,7 +118,7 @@ const CONTENT = {
 
     contactEyebrow: "06 — Contact",
     contactTitle: "Et si on se parlait ?",
-    contactBody: "Pour une mission freelance, une collaboration ou simplement échanger — j'écoute toujours les beaux projets.",
+    contactBody: "Pour une mission freelance, une collaboration ou simplement échanger, j'écoute toujours les beaux projets.",
     contactFormName: "Nom",
     contactFormEmail: "Email",
     contactFormProject: "Type de projet",
@@ -148,7 +148,7 @@ const CONTENT = {
     heroEyebrow: "Portfolio · 2026",
     heroName: ["Binta", "Kande"],
     heroSubtitle: "Chief of Staff · MSc AI & Data · Freelance Digital Marketing",
-    heroDescription: "At the crossroads of digital, communication and AI — I bring unique projects to life where creativity meets strategy.",
+    heroDescription: "At the crossroads of digital, communication and AI, I bring unique projects to life where creativity meets strategy.",
     heroMantra: "Créer, résoudre, avancer",
     heroCta: "Let's work together",
     heroCv: "Download CV",
@@ -157,8 +157,8 @@ const CONTENT = {
     aboutEyebrow: "01 — About",
     aboutTitle: "At the intersection of strategy and craft.",
     aboutBody: [
-      "Currently pursuing a MSc in AI & Data, I work alongside the CEO of a young company — a Chief of Staff role where I cover everything: strategy, operations, marketing, automations.",
-      "On the side, I help startups and creators build their digital presence — editorial strategy, content design, workflow automation.",
+      "Currently pursuing a MSc in AI & Data, I work alongside the CEO of a young company, a Chief of Staff role where I cover everything: strategy, operations, marketing, automations.",
+      "On the side, I help startups and creators build their digital presence: editorial strategy, content design, workflow automation.",
       "What lights me up: turning a fuzzy idea into a system that runs. Bringing beauty to operations."
     ],
     aboutFacts: [
@@ -170,19 +170,19 @@ const CONTENT = {
 
     cosEyebrow: "02 — Chief of Staff",
     cosTitle: "The right hand who pulls every string.",
-    cosIntro: "Day to day, I wear many hats to push the company forward — strategy, team, numbers, marketing.",
+    cosIntro: "Day to day, I wear many hats to push the company forward: strategy, team, numbers, marketing.",
     cosMissions: [
       { tag: "Strategy", title: "Pitch decks & narrative", body: "Design and polish of investor pitch decks, board updates, client presentations." },
       { tag: "Ops", title: "Reporting & KPIs", body: "Setting up KPI tracking, dashboards, weekly and monthly reporting for CEO and board." },
       { tag: "Team", title: "Training & onboarding", body: "Building internal training paths, documenting processes, onboarding new joiners." },
       { tag: "Growth", title: "Marketing & revenue", body: "Driving acquisition channels, campaigns, product launches. Growing revenue through rigorous execution." },
       { tag: "Tech", title: "Automations", body: "Building automated workflows (n8n, Make) to free up the team's time and stabilize operations." },
-      { tag: "Lead", title: "CEO's right hand", body: "Present on every strategic topic — decisions, trade-offs, cross-functional projects." }
+      { tag: "Lead", title: "CEO's right hand", body: "Present on every strategic topic: decisions, trade-offs, cross-functional projects." }
     ],
 
     servicesEyebrow: "03 — Freelance services",
     servicesTitle: "Digital communication, end to end.",
-    servicesIntro: "I design and deploy communication strategies for the brands I work with — usually 6-month engagements, sometimes more.",
+    servicesIntro: "I design and deploy communication strategies for the brands I work with, usually 6-month engagements, sometimes more.",
     services: [
       { number: "S/01", title: "Editorial strategy", items: ["Idea & trend research", "Monthly content calendar", "Channel-specific tone", "Brand storytelling"] },
       { number: "S/02", title: "Content creation", items: ["Post design (Canva)", "Reels & short-form video", "Caption writing", "LinkedIn carousels"] },
@@ -192,7 +192,7 @@ const CONTENT = {
 
     workEyebrow: "04 — Case studies",
     workTitle: "Results, not promises.",
-    workIntro: "A selection of recent work — what I did, how, and measured impact.",
+    workIntro: "A selection of recent work: what I did, how, and measured impact.",
     cases: [
       {
         client: "AI startup",
@@ -210,7 +210,7 @@ const CONTENT = {
         client: "Podcaster",
         type: "Long engagement · ongoing",
         role: "Strategy & editorial",
-        teaser: "360° communication strategy for a podcaster — editorial-only.",
+        teaser: "360° communication strategy for a podcaster, editorial focus.",
         scope: ["Content idea research", "Weekly news posts", "Scheduling", "1 post / week per channel", "Multi-channel: LinkedIn, TikTok, Instagram"],
         stats: [
           { value: "5%", label: "engagement rate" },
@@ -260,7 +260,7 @@ const CONTENT = {
 
     contactEyebrow: "06 — Contact",
     contactTitle: "Let's talk.",
-    contactBody: "For a freelance engagement, a collaboration, or just to chat — I always make time for great projects.",
+    contactBody: "For a freelance engagement, a collaboration, or just to chat, I always make time for great projects.",
     contactFormName: "Name",
     contactFormEmail: "Email",
     contactFormProject: "Project type",

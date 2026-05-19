@@ -141,7 +141,7 @@ function Hero({ t, heroVariant }) {
               <p className="hero__description">{t.heroDescription}</p>
             </Reveal>
             <Reveal delay={360}>
-              <p className="hero__mantra serif-italic">— {t.heroMantra}</p>
+              <p className="hero__mantra serif-italic">{t.heroMantra}</p>
             </Reveal>
             <Reveal delay={420}>
               <div className="hero__cta-row">
@@ -288,7 +288,7 @@ function Manifesto({ t }) {
             })}
           </p>
           <div className="manifesto__sign">
-            <span className="serif-italic">— Binta K.</span>
+            <span className="serif-italic">Binta K.</span>
             <span className="manifesto__rule" />
             <span className="mono">Becc's Studio · 2026</span>
           </div>
