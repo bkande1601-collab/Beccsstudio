@@ -121,7 +121,7 @@ ul { list-style: none; }
 .hero__visual-mono { font-family: var(--serif); font-style: italic; font-size: clamp(80px, 10vw, 140px); color: var(--accent-ink); letter-spacing: -0.04em; transition: opacity 0.4s ease; }
 .hero__visual-photo { position: absolute; inset: 12%; border-radius: 50%; background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--accent) 70%, var(--bg)), color-mix(in oklab, var(--accent) 70%, var(--bg)) 10px, color-mix(in oklab, var(--accent) 50%, var(--bg)) 10px, color-mix(in oklab, var(--accent) 50%, var(--bg)) 20px); display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(0.92); transition: opacity 0.4s ease, transform 0.5s cubic-bezier(.2,.8,.2,1); pointer-events: none; }
 .hero__visual-ring { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); animation: rotate 24s linear infinite; }
-.hero__visual-text { font-family: var(--mono); font-size: 9px; letter-spacing: 1.7em; text-transform: uppercase; fill: var(--fg-2); }
+.hero__visual-text { font-family: var(--mono); font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase; fill: var(--fg-2); }
 @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .hero--giant .hero__giant-wrap { position: relative; z-index: 2; width: 100%; max-width: var(--container); margin: 0 auto; }
 .hero__giant-name { font-family: var(--sans); font-size: clamp(80px, 18vw, 280px); line-height: 0.85; letter-spacing: -0.05em; font-weight: 500; margin: 24px 0 40px; display: flex; flex-direction: column; }
@@ -373,11 +373,11 @@ const CONTENT = {
     heroCv: "Télécharger le CV",
     scrollHint: "Faire défiler",
 
-    aboutEyebrow: "01 — À propos",
+    aboutEyebrow: "01 À propos",
     aboutTitle: "À l'intersection de la stratégie et de la création.",
     aboutBody: [
-      "Actuellement en MSc IA & Data, je travaille au plus près du CEO d'une jeune entreprise — un poste de Chief of Staff où je touche à tout : stratégie, opérations, marketing, automatisations.",
-      "En parallèle, j'accompagne en freelance des startups et créatrices sur leur communication digitale, de la stratégie éditoriale au design des publications, jusqu'à l'automatisation de leurs workflows.",
+      "Actuellement en MSc IA & Data, je travaille au plus près du CEO d'une jeune entreprise, un poste de Chief of Staff où je touche à tout : stratégie, opérations, marketing, automatisations.",
+      "En parallèle, j'accompagne des entreprises, startups et créatrices dans leur stratégie de communication digitale : de l'édito au design des publications, jusqu'à l'automatisation de leurs workflows.",
       "Ce qui me fait vibrer : transformer une idée floue en système qui tourne. Mettre de la beauté dans l'opérationnel."
     ],
     aboutFacts: [
@@ -461,7 +461,7 @@ const CONTENT = {
     skillsEyebrow: "05 — Outils & compétences",
     skillsTitle: "La stack que j'utilise au quotidien.",
     skillCategories: [
-      { name: "Design & création", tools: ["Canva", "Figma", "Capcut"] },
+      { name: "Design & création", tools: ["Canva", "Capcut"] },
       { name: "Automatisations", tools: ["n8n", "Make", "Zapier"] },
       { name: "IA & data", tools: ["Python", "Dust", "Dataiku", "Claude Code", "RAG"] },
       { name: "Dev & ops", tools: ["Cursor", "VSCode", "GitHub", "Vercel", "Supabase"] },
@@ -514,11 +514,11 @@ const CONTENT = {
     heroCv: "Download CV",
     scrollHint: "Scroll",
 
-    aboutEyebrow: "01 — About",
+    aboutEyebrow: "01 About",
     aboutTitle: "At the intersection of strategy and craft.",
     aboutBody: [
       "Currently pursuing a MSc in AI & Data, I work alongside the CEO of a young company, a Chief of Staff role where I cover everything: strategy, operations, marketing, automations.",
-      "On the side, I help startups and creators build their digital presence: editorial strategy, content design, workflow automation.",
+      "On the side, I work with companies, startups and creators on their digital communication strategy: editorial, content design, and workflow automation.",
       "What lights me up: turning a fuzzy idea into a system that runs. Bringing beauty to operations."
     ],
     aboutFacts: [
@@ -602,7 +602,7 @@ const CONTENT = {
     skillsEyebrow: "05 — Tools & skills",
     skillsTitle: "The stack I use every day.",
     skillCategories: [
-      { name: "Design & craft", tools: ["Canva", "Figma", "Capcut"] },
+      { name: "Design & craft", tools: ["Canva", "Capcut"] },
       { name: "Automations", tools: ["n8n", "Make", "Zapier"] },
       { name: "AI & data", tools: ["Python", "Dust", "Dataiku", "Claude Code", "RAG"] },
       { name: "Dev & ops", tools: ["Cursor", "VSCode", "GitHub", "Vercel", "Supabase"] },
@@ -907,7 +907,7 @@ function Hero({ t, heroVariant }) {
         <Reveal><p className="eyebrow">{t.heroEyebrow}</p></Reveal>
         <Reveal delay={120}><h1 className="hero__giant-name"><span>{t.heroName[0]}</span><span className="serif-italic">{t.heroName[1]}</span></h1></Reveal>
         <Reveal delay={240}><div className="hero__giant-meta"><p className="hero__subtitle">{t.heroSubtitle}</p><p className="hero__mantra serif-italic">{t.heroMantra}</p></div></Reveal>
-        <Reveal delay={360}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic><Magnetic strength={0.15}><a href="#" className="btn btn--ghost">{t.heroCv} <span>↓</span></a></Magnetic></div></Reveal>
+        <Reveal delay={360}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic></div></Reveal>
       </div>
       <div className="hero__scroll-hint"><span className="dot-pulse" />{t.scrollHint}</div>
     </section>
@@ -925,7 +925,7 @@ function Hero({ t, heroVariant }) {
           <Reveal delay={240}><p className="hero__subtitle">{t.heroSubtitle}</p></Reveal>
           <Reveal delay={300}><p className="hero__description">{t.heroDescription}</p></Reveal>
           <Reveal delay={360}><p className="hero__mantra serif-italic">{t.heroMantra}</p></Reveal>
-          <Reveal delay={420}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic><Magnetic strength={0.15}><a href="#" className="btn btn--ghost">{t.heroCv} <span>↓</span></a></Magnetic></div></Reveal>
+          <Reveal delay={420}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic></div></Reveal>
         </div>
         <div className="hero__asym-portrait"><Reveal delay={480}><div className="portrait-slot" style={orbStyle}><span className="portrait-mono">portrait · drop in</span></div></Reveal></div>
       </div>
@@ -942,7 +942,7 @@ function Hero({ t, heroVariant }) {
           <Reveal delay={120}><h1 className="hero__split-name">{t.heroName[0]}<br /><span className="serif-italic">{t.heroName[1]}</span></h1></Reveal>
           <Reveal delay={240}><p className="hero__subtitle">{t.heroSubtitle}</p></Reveal>
           <Reveal delay={300}><p className="hero__description">{t.heroDescription}</p></Reveal>
-          <Reveal delay={360}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic><Magnetic strength={0.15}><a href="#" className="btn btn--ghost">{t.heroCv} <span>↓</span></a></Magnetic></div></Reveal>
+          <Reveal delay={360}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic></div></Reveal>
         </div>
         <Reveal delay={300} className="hero__split-right">
           <div className="hero__visual" style={orbStyle}>
@@ -950,7 +950,7 @@ function Hero({ t, heroVariant }) {
               <span className="hero__visual-mono">B · K</span>
               <svg className="hero__visual-ring" viewBox="0 0 200 200">
                 <defs><path id="circle" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" /></defs>
-                <text className="hero__visual-text"><textPath href="#circle">{t.heroMantra}</textPath></text>
+                <text className="hero__visual-text"><textPath href="#circle">{t.heroMantra} ✦ {t.heroMantra} ✦</textPath></text>
               </svg>
             </div>
           </div>
@@ -1242,12 +1242,12 @@ function Blog({ t }) {
         <div className="blog__list">
           {t.blog.map((post, i) => (
             <Reveal key={i} delay={i * 70}>
-              <a href="#" className="blog__row">
+              <div className="blog__row" style={{ cursor: "default", opacity: 0.75 }}>
                 <span className="blog__date mono">{post.date}</span>
-                <span className="blog__tag">{post.tag}</span>
+                <span className="blog__tag">Bientôt</span>
                 <span className="blog__title">{post.title}</span>
-                <span className="blog__arrow">→</span>
-              </a>
+                <span className="blog__arrow mono" style={{ fontSize: 10 }}>soon</span>
+              </div>
             </Reveal>
           ))}
         </div>
