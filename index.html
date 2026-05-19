@@ -415,10 +415,12 @@ const CONTENT = {
     workIntro: "Sélection de missions récentes : ce que j'ai fait, comment, et l'impact mesuré.",
     cases: [
       {
-        client: "Startup IA",
+        client: "MNGRS.AI",
         type: "Mission longue · 6 mois",
         role: "Direction de la communication",
         teaser: "Rebranding visuel + stratégie social media multi-canal pour une startup dans l'IA.",
+        url: "https://www.mngrs.ai/en",
+        image: "uploads/mngrs.png",
         scope: ["Rebranding visuel qualitatif", "Design des publications", "Reels & vidéos courtes", "Rédaction des captions", "Planning éditorial complet", "4 canaux : Instagram, LinkedIn, TikTok, YouTube"],
         stats: [
           { value: "+2 000", label: "abonnés en 6 mois" },
@@ -427,10 +429,12 @@ const CONTENT = {
         ]
       },
       {
-        client: "Podcasteuse",
+        client: "weTalk",
         type: "Mission longue · en cours",
         role: "Stratégie & édito",
         teaser: "Stratégie de communication 360° pour une podcasteuse, uniquement la partie éditoriale.",
+        url: "https://www.youtube.com/@weTalkLepodcast",
+        image: "uploads/wetalk.svg",
         scope: ["Recherche d'idées de contenu", "News hebdomadaires", "Programmation des publications", "1 post / semaine sur chaque canal", "Multi-canal : LinkedIn, TikTok, Instagram"],
         stats: [
           { value: "5 %", label: "taux d'engagement" },
@@ -439,10 +443,12 @@ const CONTENT = {
         ]
       },
       {
-        client: "Sites web sur-mesure",
+        client: "AKC",
         type: "Missions ponctuelles",
         role: "Conception & développement",
         teaser: "Création de sites internet de A à Z pour des clients freelances et indépendants.",
+        url: "https://www.akconseil.fr/",
+        image: "uploads/akc.svg",
         scope: ["Brief & wireframes", "Design sur-mesure", "Développement no-code / code", "SEO de base", "Mise en ligne & formation client"],
         stats: [
           { value: "100 %", label: "sur-mesure" },
@@ -556,10 +562,12 @@ const CONTENT = {
     workIntro: "A selection of recent work: what I did, how, and measured impact.",
     cases: [
       {
-        client: "AI startup",
+        client: "MNGRS.AI",
         type: "Long engagement · 6 months",
         role: "Communication lead",
         teaser: "Visual rebrand + multi-channel social strategy for an AI startup.",
+        url: "https://www.mngrs.ai/en",
+        image: "uploads/mngrs.png",
         scope: ["Quality visual rebranding", "Post design", "Reels & short videos", "Caption writing", "Full editorial calendar", "4 channels: Instagram, LinkedIn, TikTok, YouTube"],
         stats: [
           { value: "+2,000", label: "followers in 6 months" },
@@ -568,10 +576,12 @@ const CONTENT = {
         ]
       },
       {
-        client: "Podcaster",
+        client: "weTalk",
         type: "Long engagement · ongoing",
         role: "Strategy & editorial",
         teaser: "360° communication strategy for a podcaster, editorial focus.",
+        url: "https://www.youtube.com/@weTalkLepodcast",
+        image: "uploads/wetalk.svg",
         scope: ["Content idea research", "Weekly news posts", "Scheduling", "1 post / week per channel", "Multi-channel: LinkedIn, TikTok, Instagram"],
         stats: [
           { value: "5%", label: "engagement rate" },
@@ -580,10 +590,12 @@ const CONTENT = {
         ]
       },
       {
-        client: "Custom websites",
+        client: "AKC",
         type: "Project-based",
         role: "Design & development",
         teaser: "End-to-end website creation for freelance and independent clients.",
+        url: "https://www.akconseil.fr/",
+        image: "uploads/akc.svg",
         scope: ["Brief & wireframes", "Custom design", "No-code / code build", "Basic SEO", "Launch & client training"],
         stats: [
           { value: "100%", label: "tailored" },
@@ -1132,6 +1144,7 @@ function CaseStudies({ t }) {
               <Reveal key={i} delay={i * 80} className={`work__row ${isOpen ? "is-open" : ""}`}>
                 <button className="work__head" onClick={() => setOpen(isOpen ? -1 : i)} aria-expanded={isOpen}>
                   <span className="work__num mono">0{i + 1}</span>
+                  {c.image && <img src={c.image} alt={c.client} style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 6, background: "var(--bg-2)", padding: 4 }} />}
                   <span className="work__client">{c.client}</span>
                   <span className="work__role">{c.role}</span>
                   <span className="work__type mono">{c.type}</span>
@@ -1142,9 +1155,12 @@ function CaseStudies({ t }) {
                     <div className="work__panel-left">
                       <p className="work__teaser">{c.teaser}</p>
                       <ul className="work__scope">{c.scope.map((s, j) => <li key={j}><span className="services__bullet" />{s}</li>)}</ul>
+                      {c.url && <a href={c.url} target="_blank" rel="noopener noreferrer" className="mono" style={{ fontSize: 12, color: "var(--accent)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4, marginTop: 16 }}>{c.client} ↗</a>}
                     </div>
                     <div className="work__panel-right">
-                      <div className="work__visual"><span className="portrait-mono">visual · {c.client.toLowerCase()}</span></div>
+                      <div className="work__visual" style={{ background: "var(--bg-2)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+                        {c.image ? <img src={c.image} alt={c.client} style={{ maxWidth: "80%", maxHeight: 120, objectFit: "contain" }} /> : <span className="portrait-mono">visual · {c.client.toLowerCase()}</span>}
+                      </div>
                       <div className="work__stats">{c.stats.map((s, j) => <div className="work__stat" key={j}><div className="work__stat-val serif-italic">{s.value}</div><div className="work__stat-label mono">{s.label}</div></div>)}</div>
                     </div>
                   </div>
