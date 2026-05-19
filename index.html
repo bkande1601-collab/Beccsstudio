@@ -120,10 +120,8 @@ ul { list-style: none; }
 .hero__visual-disc { position: relative; width: clamp(260px, 32vw, 440px); height: clamp(260px, 32vw, 440px); border-radius: 50%; background: radial-gradient(circle at 35% 35%, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; box-shadow: 0 30px 80px -20px color-mix(in oklab, var(--accent) 40%, transparent); }
 .hero__visual-mono { font-family: var(--serif); font-style: italic; font-size: clamp(80px, 10vw, 140px); color: var(--accent-ink); letter-spacing: -0.04em; transition: opacity 0.4s ease; }
 .hero__visual-photo { position: absolute; inset: 12%; border-radius: 50%; background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--accent) 70%, var(--bg)), color-mix(in oklab, var(--accent) 70%, var(--bg)) 10px, color-mix(in oklab, var(--accent) 50%, var(--bg)) 10px, color-mix(in oklab, var(--accent) 50%, var(--bg)) 20px); display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(0.92); transition: opacity 0.4s ease, transform 0.5s cubic-bezier(.2,.8,.2,1); pointer-events: none; }
-.hero__visual-disc:hover .hero__visual-photo { opacity: 1; transform: scale(1); }
-.hero__visual-disc:hover .hero__visual-mono { opacity: 0; }
 .hero__visual-ring { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); animation: rotate 24s linear infinite; }
-.hero__visual-text { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; fill: var(--fg-2); }
+.hero__visual-text { font-family: var(--mono); font-size: 9px; letter-spacing: 1.7em; text-transform: uppercase; fill: var(--fg-2); }
 @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .hero--giant .hero__giant-wrap { position: relative; z-index: 2; width: 100%; max-width: var(--container); margin: 0 auto; }
 .hero__giant-name { font-family: var(--sans); font-size: clamp(80px, 18vw, 280px); line-height: 0.85; letter-spacing: -0.05em; font-weight: 500; margin: 24px 0 40px; display: flex; flex-direction: column; }
@@ -369,8 +367,8 @@ const CONTENT = {
     heroEyebrow: "Portfolio · 2026",
     heroName: ["Binta", "Kande"],
     heroSubtitle: "Chief of Staff · MSc IA & Data · Freelance Marketing Digital",
-    heroDescription: "À la croisée du Digital et de l'IA — je donne vie à des projets uniques où créativité et stratégie se rencontrent.",
-    heroMantra: "Créer, résoudre, avancer.",
+    heroDescription: "À la croisée du Digital et de l'IA, je donne vie à des projets uniques où créativité et stratégie se rencontrent.",
+    heroMantra: "Créer, résoudre, avancer",
     heroCta: "Travaillons ensemble",
     heroCv: "Télécharger le CV",
     scrollHint: "Faire défiler",
@@ -391,7 +389,7 @@ const CONTENT = {
 
     cosEyebrow: "02 — Chief of Staff",
     cosTitle: "Le bras droit qui tient toutes les ficelles.",
-    cosIntro: "Au quotidien, je multiplie les casquettes pour faire avancer l'entreprise — stratégie, équipe, chiffres, marketing.",
+    cosIntro: "Au quotidien, je multiplie les casquettes pour faire avancer l'entreprise : stratégie, équipe, chiffres, marketing.",
     cosMissions: [
       { tag: "Stratégie", title: "Pitch decks & narrative", body: "Conception et mise en forme de pitch decks investisseurs, support de comité, présentations clients." },
       { tag: "Opérations", title: "Reporting & KPI", body: "Mise en place du suivi des indicateurs, dashboards, reporting hebdo et mensuel pour le CEO et le board." },
@@ -403,7 +401,7 @@ const CONTENT = {
 
     servicesEyebrow: "03 — Services freelance",
     servicesTitle: "Communication digitale, de A à Z.",
-    servicesIntro: "Je conçois et déploie la stratégie de communication des marques que j'accompagne — souvent sur 6 mois, parfois plus.",
+    servicesIntro: "Je conçois et déploie la stratégie de communication des marques que j'accompagne, souvent sur 6 mois, parfois plus.",
     services: [
       { number: "S/01", title: "Stratégie éditoriale", items: ["Recherche d'idées et de tendances", "Planning éditorial mensuel", "Lignes éditoriales par canal", "Storytelling de marque"] },
       { number: "S/02", title: "Création de contenu", items: ["Design de publications (Canva)", "Reels & vidéos courtes", "Rédaction de captions", "Carrousels LinkedIn"] },
@@ -413,7 +411,7 @@ const CONTENT = {
 
     workEyebrow: "04 — Cas clients",
     workTitle: "Des résultats, pas des promesses.",
-    workIntro: "Sélection de missions récentes — ce que j'ai fait, comment, et l'impact mesuré.",
+    workIntro: "Sélection de missions récentes : ce que j'ai fait, comment, et l'impact mesuré.",
     cases: [
       {
         client: "Startup IA",
@@ -431,7 +429,7 @@ const CONTENT = {
         client: "Podcasteuse",
         type: "Mission longue · en cours",
         role: "Stratégie & édito",
-        teaser: "Stratégie de communication 360° pour une podcasteuse — uniquement la partie éditoriale.",
+        teaser: "Stratégie de communication 360° pour une podcasteuse, uniquement la partie éditoriale.",
         scope: ["Recherche d'idées de contenu", "News hebdomadaires", "Programmation des publications", "1 post / semaine sur chaque canal", "Multi-canal : LinkedIn, TikTok, Instagram"],
         stats: [
           { value: "5 %", label: "taux d'engagement" },
@@ -481,7 +479,7 @@ const CONTENT = {
 
     contactEyebrow: "06 — Contact",
     contactTitle: "Et si on se parlait ?",
-    contactBody: "Pour une mission freelance, une collaboration ou simplement échanger — j'écoute toujours les beaux projets.",
+    contactBody: "Pour une mission freelance, une collaboration ou simplement échanger, j'écoute toujours les beaux projets.",
     contactFormName: "Nom",
     contactFormEmail: "Email",
     contactFormProject: "Type de projet",
@@ -495,7 +493,6 @@ const CONTENT = {
     blogEyebrow: "Journal",
     blogTitle: "Notes & lectures",
     blog: [
-      { date: "Avril 2026", tag: "IA", title: "Automatiser sa veille avec n8n + Claude" },
       { date: "Mars 2026", tag: "Édito", title: "Le calendrier éditorial qui tient 6 mois" },
       { date: "Février 2026", tag: "Stratégie", title: "Chief of Staff : le rôle qu'on ne comprend pas" }
     ],
@@ -511,8 +508,8 @@ const CONTENT = {
     heroEyebrow: "Portfolio · 2026",
     heroName: ["Binta", "Kande"],
     heroSubtitle: "Chief of Staff · MSc AI & Data · Freelance Digital Marketing",
-    heroDescription: "At the crossroads of digital, communication and AI — I bring unique projects to life where creativity meets strategy.",
-    heroMantra: "Create, solve, move forward.",
+    heroDescription: "At the crossroads of digital, communication and AI, I bring unique projects to life where creativity meets strategy.",
+    heroMantra: "Créer, résoudre, avancer",
     heroCta: "Let's work together",
     heroCv: "Download CV",
     scrollHint: "Scroll",
@@ -520,8 +517,8 @@ const CONTENT = {
     aboutEyebrow: "01 — About",
     aboutTitle: "At the intersection of strategy and craft.",
     aboutBody: [
-      "Currently pursuing a MSc in AI & Data, I work alongside the CEO of a young company — a Chief of Staff role where I cover everything: strategy, operations, marketing, automations.",
-      "On the side, I help startups and creators build their digital presence — editorial strategy, content design, workflow automation.",
+      "Currently pursuing a MSc in AI & Data, I work alongside the CEO of a young company, a Chief of Staff role where I cover everything: strategy, operations, marketing, automations.",
+      "On the side, I help startups and creators build their digital presence: editorial strategy, content design, workflow automation.",
       "What lights me up: turning a fuzzy idea into a system that runs. Bringing beauty to operations."
     ],
     aboutFacts: [
@@ -533,19 +530,19 @@ const CONTENT = {
 
     cosEyebrow: "02 — Chief of Staff",
     cosTitle: "The right hand who pulls every string.",
-    cosIntro: "Day to day, I wear many hats to push the company forward — strategy, team, numbers, marketing.",
+    cosIntro: "Day to day, I wear many hats to push the company forward: strategy, team, numbers, marketing.",
     cosMissions: [
       { tag: "Strategy", title: "Pitch decks & narrative", body: "Design and polish of investor pitch decks, board updates, client presentations." },
       { tag: "Ops", title: "Reporting & KPIs", body: "Setting up KPI tracking, dashboards, weekly and monthly reporting for CEO and board." },
       { tag: "Team", title: "Training & onboarding", body: "Building internal training paths, documenting processes, onboarding new joiners." },
       { tag: "Growth", title: "Marketing & revenue", body: "Driving acquisition channels, campaigns, product launches. Growing revenue through rigorous execution." },
       { tag: "Tech", title: "Automations", body: "Building automated workflows (n8n, Make) to free up the team's time and stabilize operations." },
-      { tag: "Lead", title: "CEO's right hand", body: "Present on every strategic topic — decisions, trade-offs, cross-functional projects." }
+      { tag: "Lead", title: "CEO's right hand", body: "Present on every strategic topic: decisions, trade-offs, cross-functional projects." }
     ],
 
     servicesEyebrow: "03 — Freelance services",
     servicesTitle: "Digital communication, end to end.",
-    servicesIntro: "I design and deploy communication strategies for the brands I work with — usually 6-month engagements, sometimes more.",
+    servicesIntro: "I design and deploy communication strategies for the brands I work with, usually 6-month engagements, sometimes more.",
     services: [
       { number: "S/01", title: "Editorial strategy", items: ["Idea & trend research", "Monthly content calendar", "Channel-specific tone", "Brand storytelling"] },
       { number: "S/02", title: "Content creation", items: ["Post design (Canva)", "Reels & short-form video", "Caption writing", "LinkedIn carousels"] },
@@ -555,7 +552,7 @@ const CONTENT = {
 
     workEyebrow: "04 — Case studies",
     workTitle: "Results, not promises.",
-    workIntro: "A selection of recent work — what I did, how, and measured impact.",
+    workIntro: "A selection of recent work: what I did, how, and measured impact.",
     cases: [
       {
         client: "AI startup",
@@ -573,7 +570,7 @@ const CONTENT = {
         client: "Podcaster",
         type: "Long engagement · ongoing",
         role: "Strategy & editorial",
-        teaser: "360° communication strategy for a podcaster — editorial-only.",
+        teaser: "360° communication strategy for a podcaster, editorial focus.",
         scope: ["Content idea research", "Weekly news posts", "Scheduling", "1 post / week per channel", "Multi-channel: LinkedIn, TikTok, Instagram"],
         stats: [
           { value: "5%", label: "engagement rate" },
@@ -623,7 +620,7 @@ const CONTENT = {
 
     contactEyebrow: "06 — Contact",
     contactTitle: "Let's talk.",
-    contactBody: "For a freelance engagement, a collaboration, or just to chat — I always make time for great projects.",
+    contactBody: "For a freelance engagement, a collaboration, or just to chat, I always make time for great projects.",
     contactFormName: "Name",
     contactFormEmail: "Email",
     contactFormProject: "Project type",
@@ -637,7 +634,6 @@ const CONTENT = {
     blogEyebrow: "Journal",
     blogTitle: "Notes & reads",
     blog: [
-      { date: "April 2026", tag: "AI", title: "Automating your watch with n8n + Claude" },
       { date: "March 2026", tag: "Editorial", title: "The 6-month editorial calendar that holds" },
       { date: "February 2026", tag: "Strategy", title: "Chief of Staff: the role nobody understands" }
     ],
@@ -928,7 +924,7 @@ function Hero({ t, heroVariant }) {
         <div className="hero__asym-right">
           <Reveal delay={240}><p className="hero__subtitle">{t.heroSubtitle}</p></Reveal>
           <Reveal delay={300}><p className="hero__description">{t.heroDescription}</p></Reveal>
-          <Reveal delay={360}><p className="hero__mantra serif-italic">— {t.heroMantra}</p></Reveal>
+          <Reveal delay={360}><p className="hero__mantra serif-italic">{t.heroMantra}</p></Reveal>
           <Reveal delay={420}><div className="hero__cta-row"><Magnetic><a href="#contact" className="btn btn--primary">{t.heroCta} <span>→</span></a></Magnetic><Magnetic strength={0.15}><a href="#" className="btn btn--ghost">{t.heroCv} <span>↓</span></a></Magnetic></div></Reveal>
         </div>
         <div className="hero__asym-portrait"><Reveal delay={480}><div className="portrait-slot" style={orbStyle}><span className="portrait-mono">portrait · drop in</span></div></Reveal></div>
@@ -952,10 +948,9 @@ function Hero({ t, heroVariant }) {
           <div className="hero__visual" style={orbStyle}>
             <div className="hero__visual-disc">
               <span className="hero__visual-mono">B · K</span>
-              <div className="hero__visual-photo"><span className="portrait-mono">photo · drop in</span></div>
               <svg className="hero__visual-ring" viewBox="0 0 200 200">
                 <defs><path id="circle" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" /></defs>
-                <text className="hero__visual-text"><textPath href="#circle">{t.heroMantra} {t.heroMantra} {t.heroMantra} </textPath></text>
+                <text className="hero__visual-text"><textPath href="#circle">{t.heroMantra}</textPath></text>
               </svg>
             </div>
           </div>
@@ -1013,7 +1008,7 @@ function Manifesto({ t }) {
             })}
           </p>
           <div className="manifesto__sign">
-            <span className="serif-italic">— Binta K.</span>
+            <span className="serif-italic">Binta K.</span>
             <span className="manifesto__rule" />
             <span className="mono">Becc's Studio · 2026</span>
           </div>
