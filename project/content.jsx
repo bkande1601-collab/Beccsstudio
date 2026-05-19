@@ -7,7 +7,7 @@ const CONTENT = {
     heroName: ["Binta", "Kande"],
     heroSubtitle: "Chief of Staff · MSc IA & Data · Freelance Marketing Digital",
     heroDescription: "À la croisée du Digital et de l'IA — je donne vie à des projets uniques où créativité et stratégie se rencontrent.",
-    heroMantra: "Créer, résoudre, avancer.",
+    heroMantra: "Créer, résoudre, avancer",
     heroCta: "Travaillons ensemble",
     heroCv: "Télécharger le CV",
     scrollHint: "Faire défiler",
