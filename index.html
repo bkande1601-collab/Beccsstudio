@@ -174,15 +174,6 @@ ul { list-style: none; }
 
 /* ===== ABOUT ===== */
 .about { padding: var(--section-y) 0; overflow: hidden; }
-.about__collage { position: relative; height: clamp(320px, 38vw, 520px); margin: 60px 0 80px; }
-.about__photo { position: absolute; background: var(--card); border: 1px solid var(--line); padding: 12px 12px 36px; box-shadow: 0 20px 50px -20px color-mix(in oklab, var(--fg) 30%, transparent); transition: transform 0.5s cubic-bezier(.2,.8,.2,1), z-index 0s 0.3s; z-index: 1; }
-.about__photo:hover { transform: scale(1.04) rotate(0deg) !important; z-index: 5; transition: transform 0.5s cubic-bezier(.2,.8,.2,1), z-index 0s; }
-.about__photo-inner { width: 100%; height: calc(100% - 24px); background: repeating-linear-gradient(45deg, var(--bg-2), var(--bg-2) 10px, color-mix(in oklab, var(--accent-soft) 40%, var(--bg-2)) 10px, color-mix(in oklab, var(--accent-soft) 40%, var(--bg-2)) 20px); display: flex; align-items: center; justify-content: center; border-radius: 4px; margin-bottom: 8px; }
-.about__photo-tag { font-size: 10px; color: var(--fg-3); display: block; text-align: center; }
-.about__photo--1 { width: 22%; aspect-ratio: 4/5; top: 0; left: 4%; transform: rotate(-5deg); }
-.about__photo--2 { width: 26%; aspect-ratio: 3/4; top: 18%; left: 30%; transform: rotate(3deg); z-index: 2; }
-.about__photo--3 { width: 22%; aspect-ratio: 1/1; top: 6%; right: 22%; transform: rotate(6deg); }
-.about__photo--4 { width: 24%; aspect-ratio: 4/3; bottom: 4%; right: 4%; transform: rotate(-3deg); }
 .about__grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
 .about__facts { border-top: 1px solid var(--line); display: grid; }
 .about__fact { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--line); gap: 16px; }
@@ -190,11 +181,6 @@ ul { list-style: none; }
 .about__fact-val { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--fg); text-align: right; }
 @media (max-width: 880px) { .about__grid { grid-template-columns: 1fr; } }
 @media (max-width: 760px) {
-  .about__collage { height: 380px; }
-  .about__photo--1 { width: 38%; left: 0; }
-  .about__photo--2 { width: 44%; left: 28%; }
-  .about__photo--3 { width: 36%; right: 4%; }
-  .about__photo--4 { width: 42%; right: 8%; }
 }
 
 /* ===== CHIEF OF STAFF ===== */
@@ -438,7 +424,7 @@ const CONTENT = {
         scope: ["Recherche d'idées de contenu", "News hebdomadaires", "Programmation des publications", "1 post / semaine sur chaque canal", "Multi-canal : LinkedIn, TikTok, Instagram"],
         stats: [
           { value: "5 %", label: "taux d'engagement" },
-          { value: "3", label: "canaux pilotés" },
+          { value: "4", label: "canaux pilotés" },
           { value: "Hebdo", label: "rythme de publication" }
         ]
       },
@@ -585,7 +571,7 @@ const CONTENT = {
         scope: ["Content idea research", "Weekly news posts", "Scheduling", "1 post / week per channel", "Multi-channel: LinkedIn, TikTok, Instagram"],
         stats: [
           { value: "5%", label: "engagement rate" },
-          { value: "3", label: "channels managed" },
+          { value: "4", label: "channels managed" },
           { value: "Weekly", label: "publishing cadence" }
         ]
       },
@@ -1040,12 +1026,6 @@ function About({ t }) {
           <Reveal><p className="eyebrow">{t.aboutEyebrow}</p></Reveal>
           <Reveal delay={100}><h2 className="section-title">{t.aboutTitle.split(" ").map((w, i) => <span key={i} className={i % 5 === 2 ? "serif-italic" : ""}>{w} </span>)}</h2></Reveal>
         </div>
-        <div className="about__collage">
-          <Reveal delay={100} className="about__photo about__photo--1"><div className="about__photo-inner"><span className="portrait-mono">portrait · 4:5</span></div><span className="about__photo-tag mono">studio · 2026</span></Reveal>
-          <Reveal delay={220} className="about__photo about__photo--2"><div className="about__photo-inner"><span className="portrait-mono">desk · 3:4</span></div><span className="about__photo-tag mono">workflow</span></Reveal>
-          <Reveal delay={340} className="about__photo about__photo--3"><div className="about__photo-inner"><span className="portrait-mono">moodboard · 1:1</span></div><span className="about__photo-tag mono">inspiration</span></Reveal>
-          <Reveal delay={180} className="about__photo about__photo--4"><div className="about__photo-inner"><span className="portrait-mono">on-site · 4:3</span></div><span className="about__photo-tag mono">team day</span></Reveal>
-        </div>
         <div className="about__grid">
           <div className="about__body">
             {t.aboutBody.map((p, i) => <Reveal key={i} delay={i * 80}><p className="prose">{p}</p></Reveal>)}
@@ -1157,7 +1137,12 @@ function CaseStudies({ t }) {
                       {c.url && <a href={c.url} target="_blank" rel="noopener noreferrer" className="mono" style={{ fontSize: 12, color: "var(--accent)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4, marginTop: 16 }}>{c.client} ↗</a>}
                     </div>
                     <div className="work__panel-right">
-                      <div className="work__visual"><span className="portrait-mono">visual · {c.client.toLowerCase()}</span></div>
+                      <div className="work__visual">
+                        {c.url
+                          ? <a href={c.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: "clamp(28px, 3vw, 52px)", color: "var(--fg)", textDecoration: "none", letterSpacing: "-0.02em" }}>{c.client} <span style={{ color: "var(--accent)" }}>↗</span></a>
+                          : <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: "clamp(28px, 3vw, 52px)", color: "var(--fg)", letterSpacing: "-0.02em" }}>{c.client}</span>
+                        }
+                      </div>
                       <div className="work__stats">{c.stats.map((s, j) => <div className="work__stat" key={j}><div className="work__stat-val serif-italic">{s.value}</div><div className="work__stat-label mono">{s.label}</div></div>)}</div>
                     </div>
                   </div>
