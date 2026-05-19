@@ -388,7 +388,7 @@ ul { list-style: none; }
 .hero__visual-text {
   font-family: var(--mono);
   font-size: 9px;
-  letter-spacing: 0.3em;
+  letter-spacing: 1.7em;
   text-transform: uppercase;
   fill: var(--fg-2);
 }

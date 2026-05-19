@@ -212,7 +212,7 @@ function Hero({ t, heroVariant }) {
                 </defs>
                 <text className="hero__visual-text">
                   <textPath href="#circle">
-                    {t.heroMantra} ✦ {t.heroMantra} ✦ {t.heroMantra} ✦
+                    {t.heroMantra}
                   </textPath>
                 </text>
               </svg>
