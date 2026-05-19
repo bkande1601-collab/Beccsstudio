@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="logo.png" />
   <style>
 /* ===== TOKENS ===== */
 :root {
@@ -85,8 +86,8 @@ ul { list-style: none; }
 
 /* ===== NAV ===== */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px var(--gutter); display: flex; align-items: center; justify-content: space-between; background: color-mix(in oklab, var(--bg) 78%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid color-mix(in oklab, var(--line) 40%, transparent); }
-.nav__brand { font-family: var(--serif); font-style: italic; font-size: 22px; letter-spacing: -0.02em; }
-.nav__brand-mark { color: var(--accent); margin-right: 6px; }
+.nav__brand { display: flex; align-items: center; }
+.nav__brand-logo { height: 36px; width: auto; display: block; }
 .nav__links { display: flex; gap: 28px; font-size: 13px; }
 .nav__link { color: var(--fg-2); position: relative; padding: 6px 0; }
 .nav__link::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--accent); transition: right 0.3s ease; }
@@ -1363,7 +1364,7 @@ function Nav({ lang, setLang, theme, setTheme, navLabels }) {
   ];
   return (
     <nav className="nav">
-      <a href="#home" className="nav__brand"><span className="nav__brand-mark">✦</span>Becc's Studio</a>
+      <a href="#home" className="nav__brand"><img src="logo.png" alt="Becc's Studio" className="nav__brand-logo" /></a>
       <div className="nav__links">
         {items.map((it) => <a key={it.id} href={`#${it.id}`} className={`nav__link ${active === it.id ? "is-active" : ""}`}>{it.label}</a>)}
       </div>
