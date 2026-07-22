@@ -38,25 +38,57 @@ function CaseStudies({ t }) {
                 <div className="work__panel" style={{ maxHeight: isOpen ? 800 : 0 }}>
                   <div className="work__panel-inner">
                     <div className="work__panel-left">
-                      <p className="work__teaser">{c.teaser}</p>
-                      <ul className="work__scope">
-                        {c.scope.map((s, j) =>
-                        <li key={j}><span className="services__bullet" />{s}</li>
+                      <div className="work__project-copy">
+                        {c.title && <h3 className="work__project-title">{c.title}</h3>}
+                        <p className="work__project-intro">{c.intro || c.teaser}</p>
+                        {c.tags?.length > 0 && (
+                          <div className="work__tag-list">
+                            {c.tags.map((tag, tagIndex) => (
+                              <span key={tagIndex} className="work__tag">{tag}</span>
+                            ))}
+                          </div>
                         )}
-                      </ul>
-                    </div>
-                    <div className="work__panel-right">
-                      <div className="work__visual">
-                        <span className="portrait-mono">visual · {c.client.toLowerCase()}</span>
-                      </div>
-                      <div className="work__stats">
-                        {c.stats.map((s, j) =>
-                        <div className="work__stat" key={j}>
-                            <div className="work__stat-val serif-italic">{s.value}</div>
-                            <div className="work__stat-label mono">{s.label}</div>
+                        {c.links?.length > 0 && (
+                          <div className="work__link-list">
+                            {c.links.map((link, linkIndex) => (
+                              <a key={linkIndex} href={link.href} target="_blank" rel="noreferrer" className="work__link">
+                                {link.label}
+                              </a>
+                            ))}
                           </div>
                         )}
                       </div>
+                      {c.scope?.length > 0 && (
+                        <ul className="work__scope">
+                          {c.scope.map((s, j) =>
+                          <li key={j}><span className="services__bullet" />{s}</li>
+                          )}
+                        </ul>
+                      )}
+                    </div>
+                    <div className="work__panel-right">
+                      <div className={`work__visual ${c.visualMode === "simple" ? "work__visual--simple" : c.image ? "work__visual--image" : ""}`}>
+                        {c.visualMode === "simple" ? (
+                          <div className="work__visual-simple">
+                            <span className="work__visual-label mono">Project</span>
+                            <span className="work__visual-title serif-italic">{c.visualTitle || c.title || c.client}</span>
+                          </div>
+                        ) : c.image ? (
+                          <img src={c.image} alt={c.title || c.client} />
+                        ) : (
+                          <span className="portrait-mono">visual · {c.client.toLowerCase()}</span>
+                        )}
+                      </div>
+                      {c.stats?.length > 0 && (
+                        <div className="work__stats">
+                          {c.stats.map((s, j) =>
+                          <div className="work__stat" key={j}>
+                              <div className="work__stat-val serif-italic">{s.value}</div>
+                              <div className="work__stat-label mono">{s.label}</div>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

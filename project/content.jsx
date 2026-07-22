@@ -86,6 +86,42 @@ const CONTENT = {
           { value: "100 %", label: "sur-mesure" },
           { value: "A → Z", label: "prise en charge" }
         ]
+      },
+      {
+        title: "Hackathon Mirakl × OpenAI (Eugenia) — TalentAI",
+        client: "Hackathon Mirakl × OpenAI (Eugenia) — TalentAI",
+        type: "Hackathon · 5 jours",
+        role: "Produit & IA",
+        teaser: "SaaS de recrutement IA développé en 5 jours lors d’un hackathon Mirakl × OpenAI. L’outil source, score et recommande automatiquement des candidats. Il a identifié une candidate réellement en cours de recrutement chez Mirakl.",
+        intro: "SaaS de recrutement IA développé en 5 jours lors d’un hackathon Mirakl × OpenAI. L’outil source, score et recommande automatiquement des candidats. Il a identifié une candidate réellement en cours de recrutement chez Mirakl. Résultat : 1ère place face à 85 étudiants, et 10 000€ de crédits OpenAI.",
+        tags: ["IA", "Recrutement", "SaaS", "Hackathon", "OpenAI"],
+        visualMode: "simple",
+        visualTitle: "TalentAI",
+        links: [
+          { href: "https://talent-ai-sage.vercel.app/", label: "Démo live" },
+          { href: "https://canva.link/70dcd4dq8ato4eo", label: "Voir la présentation" }
+        ],
+        image: "uploads/screenshot-talentai.png",
+        stats: [
+          { value: "1ère place", label: "face à 85 étudiants" },
+          { value: "10k€", label: "crédits OpenAI" },
+          { value: "5 jours", label: "de dev" }
+        ]
+      },
+      {
+        title: "E-Match",
+        client: "E-Match",
+        type: "Projet IA · Dust",
+        role: "Agents IA",
+        teaser: "Agents IA développés sur Dust pour aider les étudiants à trouver une alternance. L’outil aide au sourcing d’offres, au matching et à l’accompagnement dans la recherche.",
+        intro: "Agents IA développés sur Dust pour aider les étudiants à trouver une alternance. Ils assistent au sourcing d’offres, au matching et à l’accompagnement dans la recherche d’emploi.",
+        tags: ["IA", "Agents Dust", "Alternance", "Recherche d’emploi"],
+        visualMode: "simple",
+        visualTitle: "E-Match",
+        links: [
+          { href: "https://canva.link/ozj2zlqdbkcfytk", label: "Voir la présentation" }
+        ],
+        image: "uploads/screenshot-ematch.png"
       }
     ],
 
@@ -227,6 +263,42 @@ const CONTENT = {
           { value: "100%", label: "tailored" },
           { value: "A → Z", label: "ownership" }
         ]
+      },
+      {
+        title: "Hackathon Mirakl × OpenAI (Eugenia) — TalentAI",
+        client: "Hackathon Mirakl × OpenAI (Eugenia) — TalentAI",
+        type: "Hackathon · 5 days",
+        role: "Product & AI",
+        teaser: "AI recruiting SaaS built in 5 days during a Mirakl × OpenAI hackathon. The tool sources, scores, and recommends candidates automatically. It identified a real candidate who was actively being recruited at Mirakl.",
+        intro: "AI recruiting SaaS built in 5 days during a Mirakl × OpenAI hackathon. The tool sources, scores, and recommends candidates automatically. It identified a real candidate who was actively being recruited at Mirakl. Result: 1st place out of 85 students, plus $10,000 in OpenAI credits.",
+        tags: ["AI", "Recruiting", "SaaS", "Hackathon", "OpenAI"],
+        visualMode: "simple",
+        visualTitle: "TalentAI",
+        links: [
+          { href: "https://talent-ai-sage.vercel.app/", label: "Live demo" },
+          { href: "https://canva.link/70dcd4dq8ato4eo", label: "View presentation" }
+        ],
+        image: "uploads/screenshot-talentai.png",
+        stats: [
+          { value: "1st place", label: "out of 85 students" },
+          { value: "$10k", label: "OpenAI credits" },
+          { value: "5 days", label: "to build" }
+        ]
+      },
+      {
+        title: "E-Match",
+        client: "E-Match",
+        type: "AI project · Dust",
+        role: "AI agents",
+        teaser: "AI agents built on Dust to help students find internships. The tool supports offer sourcing, matching, and guidance throughout the job search.",
+        intro: "AI agents built on Dust to help students find internships. They support offer sourcing, matching, and guidance throughout the job search.",
+        tags: ["AI", "Dust agents", "Internship", "Job search"],
+        visualMode: "simple",
+        visualTitle: "E-Match",
+        links: [
+          { href: "https://canva.link/ozj2zlqdbkcfytk", label: "View presentation" }
+        ],
+        image: "uploads/screenshot-ematch.png"
       }
     ],
 
